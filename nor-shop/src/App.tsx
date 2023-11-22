@@ -24,7 +24,7 @@ function App() {
     <div className="App">
       <div>
         {products.map((product: Product) => (
-          <ProductTile product={product} />
+          <ProductTile product={product} key={product.id} />
         ))}
       </div>
     </div>
