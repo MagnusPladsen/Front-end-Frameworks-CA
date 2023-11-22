@@ -12,7 +12,7 @@ export default function ProductTile({ product }: { product: Product }) {
       ) : (
         <>
           <div>Price: {product.discountedPrice}</div>
-          <div>Discount: {product.price - product.discountedPrice}</div>
+          <div className="text-green-500">Discount: {product.price - product.discountedPrice}</div>
         </>
       )}
       <div>{product.description}</div>

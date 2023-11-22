@@ -4,6 +4,7 @@ import "./globals.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Layout from "./components/Layout/Layout.component";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -12,11 +13,11 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        {/* <Route path="/" element={<Layout />}> */}
-        <Route index element={<App />} />
-        {/* <Route path="product/:id" element={<Product />} /> */}
-        {/* <Route path="*" element={<RouteNotFound />} />
-        </Route> */}
+        <Route path="/" element={<Layout />}>
+          <Route index element={<App />} />
+          {/* <Route path="product/:id" element={<Product />} /> */}
+          {/* <Route path="*" element={<RouteNotFound />} /> */}
+        </Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
