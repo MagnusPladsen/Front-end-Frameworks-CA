@@ -10,6 +10,7 @@ import { Product } from "../models";
  * the data is still being loaded, and the "error" property is a boolean indicating whether an error
  * occurred during the fetch request.
  */
+
 export default function useFetchProducts() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
