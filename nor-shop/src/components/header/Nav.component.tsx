@@ -1,12 +1,17 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import CartIcon from "../common/icons/CartIcon.component";
+import usePath from "../../hooks/usePath";
 
 export default function Nav() {
+  const { currentPath } = usePath();
+  const activeStyle = "underline underline-offset-4";
   return (
-    <nav>
-      <ul className="flex gap-4 items-center">
+    <nav className="">
+      <ul className="flex gap-4 items-center text-primary">
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/" className={`${currentPath && activeStyle}`}>
+            Home
+          </Link>
         </li>
         <li>
           <Link to="/cart">

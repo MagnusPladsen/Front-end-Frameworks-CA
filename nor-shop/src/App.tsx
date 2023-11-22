@@ -18,8 +18,8 @@ export default function App() {
   }
 
   return (
-    <div className="">
-      <div>
+    <div className="p-3 lg:px-10 lg:py-5 w-full">
+      <div className="flex flex-col lg:flex-row lg:flex-wrap gap-3 lg:w-[90vw] 2xl:w-[1500px] lg:mx-auto justify-center ">
         {products.map((product: Product) => (
           <ProductTile product={product} key={product.id} />
         ))}
