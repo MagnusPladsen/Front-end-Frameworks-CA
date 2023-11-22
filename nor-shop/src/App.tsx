@@ -2,26 +2,28 @@ import React from "react";
 import logo from "./logo.svg";
 import "./globals.css";
 import useFetchProducts from "./hooks/useFetchProducts";
+import { Product } from "./models";
 
 function App() {
   const { products, isLoading, error } = useFetchProducts();
-  
+
+  if (isLoading) {
+    return <div>Loading</div>;
+  }
+
+  if (error) {
+    return <div>Error</div>;
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {products.map((product: Product) => (
+        <div key={product.id}>
+          <div>{product.title}</div>
+          <div>{product.price}</div>
+          <div>{product.description}</div>
+        </div>
+      ))}
     </div>
   );
 }
