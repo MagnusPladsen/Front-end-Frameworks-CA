@@ -3,6 +3,7 @@ import logo from "./logo.svg";
 import "./globals.css";
 import useFetchProducts from "./hooks/useFetchProducts";
 import { Product } from "./models";
+import ProductTile from "./components/product/ProductTile.component";
 
 function App() {
   const { products, isLoading, error } = useFetchProducts();
@@ -15,15 +16,17 @@ function App() {
     return <div>Error</div>;
   }
 
+  if (!products) {
+    return <div>No products</div>;
+  }
+
   return (
     <div className="App">
-      {products.map((product: Product) => (
-        <div key={product.id}>
-          <div>{product.title}</div>
-          <div>{product.price}</div>
-          <div>{product.description}</div>
-        </div>
-      ))}
+      <div>
+        {products.map((product: Product) => (
+          <ProductTile product={product} />
+        ))}
+      </div>
     </div>
   );
 }
