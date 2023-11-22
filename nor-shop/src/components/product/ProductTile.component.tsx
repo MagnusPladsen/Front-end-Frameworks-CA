@@ -2,6 +2,7 @@ import FormatPrice from "../common/formatters/FormatPrice.component";
 import { Product } from "../../models";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import StarRatings from "react-star-ratings";
 
 export default function ProductTile({ product }: { product: Product }) {
   const isSale = product.price !== product.discountedPrice;
@@ -11,9 +12,13 @@ export default function ProductTile({ product }: { product: Product }) {
       <motion.div
         key={product.id}
         whileHover={{ scale: 1.05 }}
-        className="rounded-md shadow bg-white p-3 flex flex-col justify-between gap-3 hover:cursor-pointer lg:w-[25vw] min-h-full"
+        transition={{ duration: 0.05 }}
+        className="rounded-md shadow bg-white p-3 flex flex-col justify-between gap-3 hover:cursor-pointer lg:w-[25vw] min-h-full lg:opacity-80 hover:lg:opacity-100 transition-all"
       >
-        <h2 className="text-lg">{product.title}</h2>
+        <div className="flex justify-between">
+          <h2 className="text-lg">{product.title}</h2>
+          {isSale && <span className="text-red-500 font-bold">SALE</span>}
+        </div>
         <p className="line-clamp-2">{product.description}</p>
         <div className="flex flex-col gap-1">
           <img
@@ -23,6 +28,14 @@ export default function ProductTile({ product }: { product: Product }) {
           />
           <p>Click to view</p>
         </div>
+        <StarRatings
+          rating={product.rating}
+          numberOfStars={5}
+          starRatedColor="gold"
+          starDimension="20px"
+          starSpacing="1px"
+        ></StarRatings>
+
         <div className="flex flex-row-reverse gap-1 justify-between items-end">
           <p>{FormatPrice(product.price)}</p>
           {isSale && (
