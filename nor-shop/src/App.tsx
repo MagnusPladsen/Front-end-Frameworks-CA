@@ -1,11 +1,8 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./globals.css";
+import ProductTile from "./components/product/ProductTile.component";
 import useFetchProducts from "./hooks/useFetchProducts";
 import { Product } from "./models";
-import ProductTile from "./components/product/ProductTile.component";
 
-function App() {
+export default function App() {
   const { products, isLoading, error } = useFetchProducts();
 
   if (isLoading) {
@@ -21,7 +18,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="">
       <div>
         {products.map((product: Product) => (
           <ProductTile product={product} key={product.id} />
@@ -30,5 +27,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
