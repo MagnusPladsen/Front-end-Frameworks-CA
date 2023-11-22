@@ -1,8 +1,11 @@
-import React from 'react';
-import logo from './logo.svg';
-import './globals.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./globals.css";
+import useFetchProducts from "./hooks/useFetchProducts";
 
 function App() {
+  const { products, isLoading, error } = useFetchProducts();
+  
   return (
     <div className="App">
       <header className="App-header">
