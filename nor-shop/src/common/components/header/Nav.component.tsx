@@ -1,6 +1,6 @@
-import { Link, NavLink } from "react-router-dom";
-import CartIcon from "../../icons/CartIcon.component";
+import { Link } from "react-router-dom";
 import usePath from "../../hooks/usePath/usePath";
+import CartIcon from "../../icons/CartIcon.component";
 
 export default function Nav() {
   const { currentPath } = usePath();
