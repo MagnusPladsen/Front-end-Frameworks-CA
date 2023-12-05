@@ -1,4 +1,4 @@
-import Logo from "../common/icons/LogoIcon.component";
+import Logo from "../../icons/LogoIcon.component";
 import Nav from "./Nav.component";
 
 export default function Header() {

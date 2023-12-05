@@ -1,8 +1,8 @@
-import ProductTile from "./components/product/ProductTile.component";
-import useFetchProducts from "./hooks/useFetchProducts";
-import { Product } from "./models";
+import ProductTile from "./productTile/ProductTile.component";
+import useFetchProducts from "../../common/hooks/useFetchProducts/useFetchProducts";
+import { Product } from "../../common/models/models";
 
-export default function App() {
+export default function HomePage() {
   const { products, isLoading, error } = useFetchProducts();
 
   if (isLoading) {

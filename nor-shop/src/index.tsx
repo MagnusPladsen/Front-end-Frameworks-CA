@@ -1,10 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./globals.css";
-import App from "./App";
+import HomePage from "./pages/homePage/HomePage";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Layout from "./components/Layout/Layout.component";
+import Layout from "./common/components/Layout/Layout.component";
+import ProductPage from "./pages/productPage/ProductPage";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -14,8 +15,8 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<App />} />
-          {/* <Route path="product/:id" element={<Product />} /> */}
+          <Route index element={<HomePage />} />
+          <Route path="product/:id" element={<ProductPage />} />
           {/* <Route path="*" element={<RouteNotFound />} /> */}
         </Route>
       </Routes>

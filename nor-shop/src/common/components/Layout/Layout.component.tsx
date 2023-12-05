@@ -1,4 +1,4 @@
-import { Product } from "../../models";
+import { Product } from "../../models/models";
 import { Outlet } from "react-router-dom";
 import Header from "../header/Header.component";
 

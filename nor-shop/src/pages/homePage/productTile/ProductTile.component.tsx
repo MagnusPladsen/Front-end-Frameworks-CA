@@ -1,5 +1,5 @@
-import FormatPrice from "../common/formatters/FormatPrice.component";
-import { Product } from "../../models";
+import FormatPrice from "../../../common/formatters/FormatPrice.component";
+import { Product } from "../../../common/models/models";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import StarRatings from "react-star-ratings";

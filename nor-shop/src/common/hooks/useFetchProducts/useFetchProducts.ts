@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { API_URL } from "../constants";
-import { Product } from "../models";
+import { API_URL } from "../../constants/constants";
+import { Product } from "../../models/models";
 
 /**
  * The function `useFetchProducts` is an asynchronous function that fetches products from an API and
