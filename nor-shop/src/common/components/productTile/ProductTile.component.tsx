@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import ProductStars from "../../../common/components/product/ProductStars.component";
-import FormatPrice from "../../../common/formatters/FormatPrice.component";
-import { Product } from "../../../common/models/models";
+import ProductStars from "../product/ProductStars.component";
+import FormatPrice from "../../formatters/FormatPrice.component";
+import { Product } from "../../models/models";
 
 export default function ProductTile({ product }: { product: Product }) {
   const isSale = product.price !== product.discountedPrice;
@@ -38,7 +38,7 @@ export default function ProductTile({ product }: { product: Product }) {
             <h2 className="text-lg font-bold max-w-[55%] line-clamp-1">
               {product.title}
             </h2>
-            <ProductStars product={product} />
+            <ProductStars rating={product.rating} reviewsAmount={product.reviews.length} />
           </div>
 
           <div className="flex justify-between flex-row-reverse">
