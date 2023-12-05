@@ -7,7 +7,7 @@ export default function Header() {
       <div className="flex justify-between lg:w-[90vw] 2xl:w-[1500px] lg:mx-auto">
         <div className="flex gap-4 items-center">
           <Logo height={30} width={30} />
-          <h1 className="text-xl">NorShop</h1>
+          <h1 className="text-xl text-primary">NorShop</h1>
         </div>
         <Nav />
       </div>
