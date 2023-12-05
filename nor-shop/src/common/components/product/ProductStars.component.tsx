@@ -28,7 +28,9 @@ export default function ProductStars({
           starDimension={starDimension}
           starSpacing={starSpacing}
         />
-        <p className={`${numberClassName}`}>({product.reviews.length})</p>
+        <p className={`font-bold ${numberClassName}`}>
+          ({product.reviews.length})
+        </p>
       </div>
     )
   );
