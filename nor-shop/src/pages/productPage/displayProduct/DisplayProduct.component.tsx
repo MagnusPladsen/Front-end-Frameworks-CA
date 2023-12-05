@@ -33,13 +33,13 @@ export default function DisplayProduct({ product }: { product: Product }) {
         </div>
 
         <p className="text-black">{product.description}</p>
-        <div className="flex justify-between ">
+        <div className="flex justify-between flex-row-reverse">
+          <p>{FormatPrice(product.price)}</p>
           {isSale && (
             <p className="text-green-500 text-sm ">
               Save {FormatPrice(product.price - product.discountedPrice)}
             </p>
           )}
-          <p>{FormatPrice(product.price)}</p>
         </div>
       </div>
     </div>

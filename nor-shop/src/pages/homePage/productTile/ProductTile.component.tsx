@@ -41,13 +41,13 @@ export default function ProductTile({ product }: { product: Product }) {
             <ProductStars product={product} />
           </div>
 
-          <div className="flex justify-between ">
+          <div className="flex justify-between flex-row-reverse">
+            <p>{FormatPrice(product.price)}</p>
             {isSale && (
               <p className="text-green-500 text-sm ">
                 Save {FormatPrice(product.price - product.discountedPrice)}
               </p>
             )}
-            <p>{FormatPrice(product.price)}</p>
           </div>
         </div>
       </motion.div>
