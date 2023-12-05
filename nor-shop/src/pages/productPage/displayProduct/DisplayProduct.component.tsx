@@ -1,50 +1,47 @@
+import ProductStars from "../../../common/components/product/ProductStars.component";
 import FormatPrice from "../../../common/formatters/FormatPrice.component";
 import { Product } from "../../../common/models/models";
-import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import StarRatings from "react-star-ratings";
 
 export default function DisplayProduct({ product }: { product: Product }) {
   const isSale = product.price !== product.discountedPrice;
 
   return (
-    <Link to={`/product/${product.id}`}>
-      <motion.div
-        key={product.id}
-        whileHover={{ scale: 1.05 }}
-        transition={{ duration: 0.05 }}
-        className="rounded-md shadow bg-white p-3 flex flex-col justify-between gap-3 hover:cursor-pointer lg:w-[25vw] min-h-full lg:opacity-80 hover:lg:opacity-100 transition-all"
-      >
-        <div className="flex justify-between">
-          <h2 className="text-lg">{product.title}</h2>
-          {isSale && <span className="text-red-500 font-bold">SALE</span>}
-        </div>
-        <p className="line-clamp-2">{product.description}</p>
-        <div className="flex flex-col gap-1">
-          <img
-            src={product.imageUrl}
-            alt={product.title}
-            className="w-full h-60 lg:h-80 object-cover"
-          />
-          <p>Click to view</p>
-        </div>
-        <StarRatings
-          rating={product.rating}
-          numberOfStars={5}
-          starRatedColor="gold"
-          starDimension="20px"
-          starSpacing="1px"
-        ></StarRatings>
+    <div
+      key={product.id}
+      className={`rounded-md shadow bg-white text-primary flex flex-col lg:flex-row justify-between min-h-full relative border border-white items-end  ${
+        isSale && " !border-red-500"
+      }`}
+    >
+      {isSale && (
+        <p className="text-red-500 absolute top-3 left-3 font-bold tracking-widest bg-white border border-red-500 rounded py-1 px-2">
+          SALE
+        </p>
+      )}
 
-        <div className="flex flex-row-reverse gap-1 justify-between items-end">
-          <p>{FormatPrice(product.price)}</p>
+      <div className="w-full h-60 lg:h-[600px] ">
+        <img
+          src={product.imageUrl}
+          alt={product.title}
+          className="h-full w-full object-cover rounded-t-md lg:rounded-l-md lg:rounded-r-none"
+        />
+      </div>
+
+      <div className="flex flex-col gap-3 h-fit p-3 lg:gap-5">
+        <div className="flex justify-between items-baseline ">
+          <h2 className="text-lg font-bold">{product.title}</h2>{" "}
+          <ProductStars product={product} />
+        </div>
+
+        <p className="text-black">{product.description}</p>
+        <div className="flex justify-between ">
           {isSale && (
-            <p className="text-green-500 text-sm">
+            <p className="text-green-500 text-sm ">
               Save {FormatPrice(product.price - product.discountedPrice)}
             </p>
           )}
+          <p>{FormatPrice(product.price)}</p>
         </div>
-      </motion.div>
-    </Link>
+      </div>
+    </div>
   );
 }

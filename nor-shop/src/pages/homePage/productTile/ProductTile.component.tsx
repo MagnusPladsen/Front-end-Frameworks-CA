@@ -1,8 +1,8 @@
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import ProductStars from "../../../common/components/product/ProductStars.component";
 import FormatPrice from "../../../common/formatters/FormatPrice.component";
 import { Product } from "../../../common/models/models";
-import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import StarRatings from "react-star-ratings";
 
 export default function ProductTile({ product }: { product: Product }) {
   const isSale = product.price !== product.discountedPrice;
@@ -35,16 +35,10 @@ export default function ProductTile({ product }: { product: Product }) {
 
         <div className="flex flex-col justify-between gap-3 h-fit p-3 ">
           <div className="flex justify-between items-baseline">
-            <h2 className="text-lg font-bold max-w-[65%] line-clamp-1">
+            <h2 className="text-lg font-bold max-w-[55%] line-clamp-1">
               {product.title}
             </h2>
-            <StarRatings
-              rating={product.rating}
-              numberOfStars={5}
-              starRatedColor="gold"
-              starDimension="20px"
-              starSpacing="0px"
-            />
+            <ProductStars product={product} />
           </div>
 
           <div className="flex justify-between ">
