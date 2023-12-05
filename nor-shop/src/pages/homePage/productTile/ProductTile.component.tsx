@@ -15,7 +15,7 @@ export default function ProductTile({ product }: { product: Product }) {
           scale: 1.05,
           shadow: "0px 0px 10px 0px rgba(0,0,0,0.75)",
         }}
-        className={`rounded-md shadow bg-white text-primary flex flex-col lg:w-[25vw] justify-between relative ${
+        className={`rounded-md shadow bg-white text-primary flex flex-col lg:w-[calc(90vw/3.1)] 2xl:w-80 justify-between relative ${
           isSale && " border border-red-500"
         }`}
       >
