@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import ProductStars from "../product/ProductStars.component";
-import FormatPrice from "../../formatters/FormatPrice.component";
-import { Product } from "../../models/models";
+import FormatPrice from "../../common/formatters/FormatPrice.component";
+import { Product } from "../../common/models/models";
+import SaleBadge from "../sale/SaleBadge.component";
 
 export default function ProductTile({ product }: { product: Product }) {
   const isSale = product.price !== product.discountedPrice;
@@ -19,11 +20,7 @@ export default function ProductTile({ product }: { product: Product }) {
           isSale && " border border-red-500"
         }`}
       >
-        {isSale && (
-          <p className="text-red-500 absolute top-3 left-3 font-bold tracking-widest bg-white border border-red-500 rounded py-1 px-2">
-            SALE
-          </p>
-        )}
+        <SaleBadge isSale={isSale} />
 
         <div className="w-full h-60 border-b shadow-inner">
           <img
@@ -38,7 +35,10 @@ export default function ProductTile({ product }: { product: Product }) {
             <h2 className="text-lg font-bold max-w-[55%] line-clamp-1">
               {product.title}
             </h2>
-            <ProductStars rating={product.rating} reviewsAmount={product.reviews.length} />
+            <ProductStars
+              rating={product.rating}
+              reviewsAmount={product.reviews.length}
+            />
           </div>
 
           <div className="flex justify-between flex-row-reverse">

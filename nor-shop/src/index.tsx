@@ -4,7 +4,7 @@ import "./globals.css";
 import HomePage from "./pages/homePage/HomePage";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Layout from "./common/components/Layout/Layout.component";
+import Layout from "./components/Layout/Layout.component";
 import ProductPage from "./pages/productPage/ProductPage";
 
 const root = ReactDOM.createRoot(
