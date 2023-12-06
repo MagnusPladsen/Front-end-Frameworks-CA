@@ -34,7 +34,7 @@ export default function ProductInfo({
         />
       </div>
 
-      <div className="flex flex-col gap-3 h-fit p-3 lg:gap-10 pb-10">
+      <div className="flex flex-col gap-3 h-fit p-3 lg:gap-5 pb-5">
         <div className="flex justify-between items-baseline ">
           <h1 className="text-lg font-bold">{product.title}</h1>
           <div
@@ -50,7 +50,7 @@ export default function ProductInfo({
 
         <p className="text-black">{product.description}</p>
         <div className="flex justify-between flex-row-reverse"></div>
-        <div className="flex justify-between pt-10 items-end">
+        <div className="flex justify-between pt-0 items-end">
           <div className="flex flex-col">
             {isSale && (
               <p className="text-green-500 text-sm ">
