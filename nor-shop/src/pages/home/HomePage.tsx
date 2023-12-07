@@ -1,4 +1,4 @@
-import ProductTile from "../../components/product/homePage/ProductTile.component";
+import ProductTile from "../../components/tile/ProductTile.component";
 import useFetchProducts from "../../common/hooks/useFetchProducts/useFetchProducts";
 import { Product } from "../../common/models/models";
 import NotFoundPage from "../notFound/NotFoundPage";

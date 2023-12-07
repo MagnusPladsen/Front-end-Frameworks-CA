@@ -14,10 +14,10 @@ export default function NotFoundPage({
     textString = "Something went wrong, please try again";
   }
   return (
-    <div className="bg-background flex flex-col gap-10">
+    <div className="bg-white p-6 py-20 lg:p-20 rounded flex flex-col gap-10 w-full lg:w-fit lg:mx-auto items-center justify-center">
       <h1>{text ?? textString}</h1>
       <Link to="/">
-        <DefaultButton text="Go back" />
+        <DefaultButton text="Home" />
       </Link>
     </div>
   );
