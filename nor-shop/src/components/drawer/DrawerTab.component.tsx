@@ -38,7 +38,7 @@ export default function DrawerTab({
         transition={{ duration: 0.3 }}
         className="text-sm"
       >
-        <div className="w-full lg:px-5 border-t border-background">
+        <div className="w-full lg:px-5 border-y border-background bg-gray-50 pb-5">
           {children}
         </div>
       </motion.div>
