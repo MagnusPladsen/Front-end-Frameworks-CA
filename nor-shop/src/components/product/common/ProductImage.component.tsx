@@ -8,7 +8,7 @@ export default function ProductImage({
   fullSize?: boolean;
 }) {
   return (
-    <div className={`${fullSize && "lg:h-[600px]"} w-full h-60 shadow-inner`}>
+    <div className={`${fullSize && "lg:h-[600px] lg:max-w-md"} w-full h-60 shadow-inner`}>
       <img
         src={srcUrl}
         alt={alt}

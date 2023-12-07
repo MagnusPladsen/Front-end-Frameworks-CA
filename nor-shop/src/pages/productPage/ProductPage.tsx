@@ -1,4 +1,4 @@
-import DisplayProduct from "../../components/product/DisplayProduct.component";
+import DisplayProduct from "../../components/product/productPage/DisplayProduct.component";
 import useFetchProduct from "../../common/hooks/useFetchProduct/useFetchProduct";
 
 export default function ProductPage() {

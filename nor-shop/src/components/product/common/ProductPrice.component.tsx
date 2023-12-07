@@ -1,6 +1,6 @@
-import { Product } from "../../common/models/models";
-import DefaultButton from "../buttons/DefaultButton.component";
-import FormatPrice from "../formatters/FormatPrice.component";
+import { Product } from "../../../common/models/models";
+import DefaultButton from "../../buttons/DefaultButton.component";
+import FormatPrice from "../../formatters/FormatPrice.component";
 import { Link } from "react-router-dom";
 
 export default function ProductPrice({

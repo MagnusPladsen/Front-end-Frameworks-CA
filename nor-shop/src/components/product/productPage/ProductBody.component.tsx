@@ -1,6 +1,5 @@
-import { Product } from "../../common/models/models";
-import BuyButton from "../buttons/DefaultButton.component";
-import ProductPrice from "./ProductPrice.component";
+import { Product } from "../../../common/models/models";
+import ProductPrice from "../common/ProductPrice.component";
 
 export default function ProductBody({
   product,

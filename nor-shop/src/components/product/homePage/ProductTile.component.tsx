@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
-import { Product } from "../../common/models/models";
-import ProductImage from "../product/ProductImage.component";
-import ProductPrice from "../product/ProductPrice.component";
-import ProductStars from "../product/ProductStars.component";
-import SaleBadge from "../sale/SaleBadge.component";
+import { Product } from "../../../common/models/models";
+import ProductImage from "../common/ProductImage.component";
+import ProductPrice from "../common/ProductPrice.component";
+import ProductStars from "../common/ProductStars.component";
+import SaleBadge from "../../sale/SaleBadge.component";
 
 export default function ProductTile({ product }: { product: Product }) {
   const isSale = product.price !== product.discountedPrice;

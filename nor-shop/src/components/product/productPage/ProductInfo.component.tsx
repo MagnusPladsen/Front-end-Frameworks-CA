@@ -1,11 +1,8 @@
-import FormatPrice from "../formatters/FormatPrice.component";
-import { Product } from "../../common/models/models";
-import BuyButton from "../buttons/DefaultButton.component";
-import SaleBadge from "../sale/SaleBadge.component";
-import ProductStars from "./ProductStars.component";
-import ProductTitle from "./ProductTitle.component";
+import { Product } from "../../../common/models/models";
+import SaleBadge from "../../sale/SaleBadge.component";
+import ProductImage from "../common/ProductImage.component";
 import ProductBody from "./ProductBody.component";
-import ProductImage from "./ProductImage.component";
+import ProductTitle from "./ProductTitle.component";
 
 export default function ProductInfo({
   product,
