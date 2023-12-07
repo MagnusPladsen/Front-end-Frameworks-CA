@@ -3,12 +3,13 @@ import { CartContextProps, CartItem, Product } from "../common/models/models";
 
 
 export const CartContext = createContext<CartContextProps>({
-    cartItems: [],
-    addToCart: () => {},
-    removeFromCart: () => {},
-    clearCart: () => {},
-    getCartTotal: () => 0,
-  });
+  cartItems: [],
+  addToCart: () => {},
+  removeFromCart: () => {},
+  clearCart: () => {},
+  getCartTotal: () => 0,
+  getCartQuantity: () => 0,
+});
 
 const CartProvider = ({ children }: { children: React.ReactNode }) => {
   const [cartItems, setCartItems] = useState<CartItem[]>(
@@ -17,19 +18,19 @@ const CartProvider = ({ children }: { children: React.ReactNode }) => {
       : []
   );
 
-  const addToCart = (item: Product) => {
+  const addToCart = (item: Product, quantity: number) => {
     const isItemInCart = cartItems.find((cartItem) => cartItem.id === item.id);
 
     if (isItemInCart) {
       setCartItems(
         cartItems.map((cartItem) =>
           cartItem.id === item.id
-            ? { ...cartItem, quantity: cartItem.quantity + 1 }
+            ? { ...cartItem, quantity: cartItem.quantity + quantity }
             : cartItem
         )
       );
     } else {
-      setCartItems([...cartItems, { ...item, quantity: 1 }]);
+      setCartItems([...cartItems, { ...item, quantity: quantity }]);
     }
   };
 
@@ -54,7 +55,14 @@ const CartProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   const getCartTotal = () => {
-    return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+    return cartItems.reduce(
+      (total, item) => total + item.price * item.quantity,
+      0
+    );
+  };
+
+  const getCartQuantity = () => {
+    return cartItems.reduce((total, item) => total + item.quantity, 0);
   };
 
   useEffect(() => {
@@ -76,9 +84,12 @@ const CartProvider = ({ children }: { children: React.ReactNode }) => {
         removeFromCart,
         clearCart,
         getCartTotal,
+        getCartQuantity,
       }}
     >
       {children}
     </CartContext.Provider>
   );
 };
+
+export default CartProvider;

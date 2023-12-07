@@ -8,22 +8,22 @@ import Layout from "./components/Layout/Layout.component";
 import ProductPage from "./pages/product/ProductPage";
 import CartPage from "./pages/cart/CartPage";
 import NotFoundPage from "./pages/notFound/NotFoundPage";
+import CartProvider from "./context/cart";
 
-const root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement
-);
-root.render(
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<HomePage />} />
-          <Route path="product/:id" element={<ProductPage />} />
-          <Route path="product/:id" element={<CartPage />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <CartProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<HomePage />} />
+            <Route path="product/:id" element={<ProductPage />} />
+            <Route path="cart" element={<CartPage />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </CartProvider>
   </React.StrictMode>
 );
 

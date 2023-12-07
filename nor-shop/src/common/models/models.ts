@@ -23,8 +23,9 @@ export interface CartItem extends Product {
 
 export interface CartContextProps {
   cartItems: CartItem[];
-  addToCart: (item: Product) => void;
+  addToCart: (item: Product, quantity: number) => void;
   removeFromCart: (item: Product) => void;
   clearCart: () => void;
   getCartTotal: () => number;
+  getCartQuantity: () => number;
 }
