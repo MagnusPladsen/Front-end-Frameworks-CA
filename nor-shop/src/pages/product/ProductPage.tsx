@@ -1,5 +1,6 @@
 import DisplayProduct from "../../components/product/productPage/DisplayProduct.component";
 import useFetchProduct from "../../common/hooks/useFetchProduct/useFetchProduct";
+import NotFoundPage from "../notFound/NotFoundPage";
 
 export default function ProductPage() {
   const { product, isLoading, error } = useFetchProduct();
@@ -9,11 +10,11 @@ export default function ProductPage() {
   }
 
   if (error) {
-    return <div>Error</div>;
+    return <NotFoundPage error />;
   }
 
   if (!product) {
-    return <div>The product does not exist</div>;
+    return <NotFoundPage />;
   }
 
   return <DisplayProduct product={product} />;

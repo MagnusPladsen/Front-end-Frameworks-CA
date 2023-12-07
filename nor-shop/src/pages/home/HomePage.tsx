@@ -1,6 +1,7 @@
 import ProductTile from "../../components/product/homePage/ProductTile.component";
 import useFetchProducts from "../../common/hooks/useFetchProducts/useFetchProducts";
 import { Product } from "../../common/models/models";
+import NotFoundPage from "../notFound/NotFoundPage";
 
 export default function HomePage() {
   const { products, isLoading, error } = useFetchProducts();
@@ -10,11 +11,11 @@ export default function HomePage() {
   }
 
   if (error) {
-    return <div>Error</div>;
+    return <NotFoundPage error />;
   }
 
   if (!products) {
-    return <div>No products</div>;
+    return <NotFoundPage />;
   }
 
   return (
