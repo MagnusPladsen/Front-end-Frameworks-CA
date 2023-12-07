@@ -1,11 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./globals.css";
-import HomePage from "./pages/homePage/HomePage";
+import HomePage from "./pages/home/HomePage";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout/Layout.component";
-import ProductPage from "./pages/productPage/ProductPage";
+import ProductPage from "./pages/product/ProductPage";
+import CartPage from "./pages/cart/CartPage";
+import NotFoundPage from "./pages/notFound/NotFoundPage";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -17,7 +19,8 @@ root.render(
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path="product/:id" element={<ProductPage />} />
-          {/* <Route path="*" element={<RouteNotFound />} /> */}
+          <Route path="product/:id" element={<CartPage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
