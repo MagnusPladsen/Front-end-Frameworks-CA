@@ -35,19 +35,7 @@ const CartProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   const removeFromCart = (item: Product) => {
-    const isItemInCart = cartItems.find((cartItem) => cartItem.id === item.id);
-
-    if (isItemInCart!.quantity === 1) {
-      setCartItems(cartItems.filter((cartItem) => cartItem.id !== item.id));
-    } else {
-      setCartItems(
-        cartItems.map((cartItem) =>
-          cartItem.id === item.id
-            ? { ...cartItem, quantity: cartItem.quantity - 1 }
-            : cartItem
-        )
-      );
-    }
+    setCartItems(cartItems.filter((cartItem) => cartItem.id !== item.id));
   };
 
   const clearCart = () => {
@@ -64,10 +52,6 @@ const CartProvider = ({ children }: { children: React.ReactNode }) => {
   const getCartQuantity = () => {
     return cartItems.reduce((total, item) => total + item.quantity, 0);
   };
-
-  const getItemQuantity = (item: Product) => {
-    return cartItems.find((cartItem) => cartItem.id === item.id)?.quantity;
-  }
 
   const updateQuantity = (item: Product, quantity: number) => {
     setCartItems(
