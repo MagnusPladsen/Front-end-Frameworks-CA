@@ -13,6 +13,7 @@ export default function ProductPrice({
   discountedPriceClassName,
   buyButton,
   viewButton,
+  cartMode,
 }: {
   product: Product;
   isSale: boolean;
@@ -21,24 +22,38 @@ export default function ProductPrice({
   discountedPriceClassName?: string;
   buyButton?: boolean;
   viewButton?: boolean;
+  cartMode?: boolean;
 }) {
   const { addToCart } = useCart();
   const [amount, setAmount] = useState(1);
   return (
-    <div className="flex justify-between pt-6 items-end">
-      <div className={`${containerClassName} flex flex-col`}>
-        {isSale && (
-          <p className={`${discountedPriceClassName} text-green-500 text-sm `}>
-            Save {FormatPrice(product.price - product.discountedPrice)}
+    <div className="flex justify-between items-end">
+      <div
+        className={`${containerClassName} ${
+          cartMode && " !justify-end !flex-col-reverse !w-full !items-end"
+        } flex flex-col`}
+      >
+        {isSale && !cartMode && (
+          <p
+            className={`${discountedPriceClassName} ${
+              cartMode && "!text-xs"
+            } text-green-500 text-sm `}
+          >
+            Save <FormatPrice price={product.price - product.discountedPrice} />
           </p>
         )}
         <p
-          className={`${priceClassName} font-bold text-xl ${
+          className={`${priceClassName} ${cartMode && "!font-medium"} text-xl ${
             isSale && "text-red-500 "
           }`}
         >
-          {FormatPrice(product.price)}
+          <FormatPrice price={product.price} />
         </p>
+        {isSale && cartMode && (
+          <p className={`${discountedPriceClassName} text-green-500 text-sm `}>
+            - <FormatPrice price={product.price - product.discountedPrice} />
+          </p>
+        )}
       </div>
       <div className="flex gap-3">
         {viewButton && (
@@ -57,7 +72,7 @@ export default function ProductPrice({
               min={1}
               type="number"
               onChange={(e) => setAmount(Number(e.target.value))}
-              className="border border-background :border-primary w-14 px-3 rounded"
+              className="border border-background focus:border-primary w-14 px-3 rounded"
             />
             <DefaultButton
               text="+ Add to cart"

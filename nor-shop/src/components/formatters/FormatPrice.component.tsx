@@ -6,9 +6,9 @@
  * @returns a formatted price as a string, using the "no-NB" locale, with the currency style set to
  * "NOK" (Norwegian Krone), and with no decimal places.
  */
-export default function FormatPrice(price: number) {
+export default function FormatPrice({price, bold}: {price: number; bold?: boolean;}) {
   return (
-    <span className="font-bold">
+    <span className={`${bold && "font-bold"} `}>
       {price.toLocaleString("no-NB", {
         style: "currency",
         currency: "NOK",
