@@ -1,7 +1,6 @@
 import { createContext, useState, useEffect } from "react";
 import { CartContextProps, CartItem, Product } from "../common/models/models";
 
-
 export const CartContext = createContext<CartContextProps>({
   cartItems: [],
   addToCart: () => {},
@@ -9,6 +8,7 @@ export const CartContext = createContext<CartContextProps>({
   clearCart: () => {},
   getCartTotal: () => 0,
   getCartQuantity: () => 0,
+  updateQuantity: () => {},
 });
 
 const CartProvider = ({ children }: { children: React.ReactNode }) => {
@@ -65,6 +65,18 @@ const CartProvider = ({ children }: { children: React.ReactNode }) => {
     return cartItems.reduce((total, item) => total + item.quantity, 0);
   };
 
+  const getItemQuantity = (item: Product) => {
+    return cartItems.find((cartItem) => cartItem.id === item.id)?.quantity;
+  }
+
+  const updateQuantity = (item: Product, quantity: number) => {
+    setCartItems(
+      cartItems.map((cartItem) =>
+        cartItem.id === item.id ? { ...cartItem, quantity: quantity } : cartItem
+      )
+    );
+  };
+
   useEffect(() => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }, [cartItems]);
@@ -85,6 +97,7 @@ const CartProvider = ({ children }: { children: React.ReactNode }) => {
         clearCart,
         getCartTotal,
         getCartQuantity,
+        updateQuantity,
       }}
     >
       {children}

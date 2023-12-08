@@ -28,4 +28,5 @@ export interface CartContextProps {
   clearCart: () => void;
   getCartTotal: () => number;
   getCartQuantity: () => number;
+  updateQuantity: (item: Product, quantity: number) => void;
 }
