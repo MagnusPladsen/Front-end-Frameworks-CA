@@ -27,7 +27,7 @@ export default function ProductInfo({
 
       <ProductImage srcUrl={product.imageUrl} alt={product.title} fullSize />
 
-      <div className="w-full flex flex-col gap-3 h-full p-3 lg:p-6 lg:gap-5 pb-10 lg:max-w-md">
+      <div className="w-full flex flex-col gap-3 h-full p-3 lg:p-6 lg:gap-5 pb-10 lg:max-w-md ">
         <ProductTitle
           product={product}
           onStarsClick={() => scrollTo(reviewsRef)}

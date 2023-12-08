@@ -1,20 +1,16 @@
 import { motion } from "framer-motion";
-import { Product } from "../../../common/models/models";
-import ProductImage from "../common/ProductImage.component";
-import ProductPrice from "../common/ProductPrice.component";
-import ProductStars from "../common/ProductStars.component";
-import SaleBadge from "../../sale/SaleBadge.component";
+import { Product } from "../../common/models/models";
+import ProductImage from "../product/common/ProductImage.component";
+import ProductPrice from "../product/common/ProductPrice.component";
+import ProductStars from "../product/common/ProductStars.component";
+import SaleBadge from "../sale/SaleBadge.component";
+import TileWrapper from "./TileWapper.component";
 
 export default function ProductTile({ product }: { product: Product }) {
   const isSale = product.price !== product.discountedPrice;
 
   return (
-    <motion.div
-      key={product.id}
-      className={`rounded-md shadow bg-white text-primary flex flex-col lg:w-[calc(90vw/3.1)] 2xl:w-80 justify-between relative ${
-        isSale && " border border-red-500"
-      }`}
-    >
+    <TileWrapper productId={product.id} isSale={isSale}>
       <SaleBadge isSale={isSale} />
 
       <ProductImage srcUrl={product.imageUrl} alt={product.title} />
@@ -37,6 +33,6 @@ export default function ProductTile({ product }: { product: Product }) {
           viewButton
         />
       </div>
-    </motion.div>
+    </TileWrapper>
   );
 }
