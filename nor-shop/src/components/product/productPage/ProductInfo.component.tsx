@@ -1,4 +1,6 @@
+import { useNavigate } from "react-router-dom";
 import { Product } from "../../../common/models/models";
+import DefaultButton from "../../buttons/DefaultButton.component";
 import SaleBadge from "../../sale/SaleBadge.component";
 import ProductImage from "../common/ProductImage.component";
 import ProductBody from "./ProductBody.component";
@@ -18,6 +20,12 @@ export default function ProductInfo({
     ref.current.scrollIntoView({ behavior: "smooth" });
   }
 
+  const navigate = useNavigate();
+
+  function goBack() {
+    navigate(-1);
+  }
+
   return (
     <div
       key={product.id}
@@ -33,6 +41,11 @@ export default function ProductInfo({
           onStarsClick={() => scrollTo(reviewsRef)}
         />
         <ProductBody product={product} isSale={isSale} />
+        <DefaultButton
+          text="Back"
+          onClick={() => goBack()}
+          className="w-fit mx-auto mt-10"
+        />
       </div>
     </div>
   );

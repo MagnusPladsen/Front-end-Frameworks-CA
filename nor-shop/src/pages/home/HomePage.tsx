@@ -7,7 +7,7 @@ export default function HomePage() {
   const { products, isLoading, error } = useFetchProducts();
 
   if (isLoading) {
-    return <div>Loading</div>;
+    return <div>Loading...</div>;
   }
 
   if (error) {

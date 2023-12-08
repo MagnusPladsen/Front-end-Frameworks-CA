@@ -14,7 +14,7 @@ export default function CartPage() {
   const { cartItems, getCartTotal } = useCart();
 
   return (
-    <div className="bg-white p-6 py-10 lg:pb-20  rounded flex flex-col lg:gap-20 gap-10 w-full lg:w-[800px] lg:mx-auto items-center justify-center">
+    <div className="bg-white p-6 py-10 lg:pb-20 rounded-b flex flex-col lg:gap-20 gap-10 w-full lg:w-[800px] lg:mx-auto items-center justify-center ">
       <h1 className="text-xl">Cart</h1>
       {cartItems.length === 0 ? (
         <p className="text-center">Your cart is empty</p>

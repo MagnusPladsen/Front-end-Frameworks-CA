@@ -13,7 +13,6 @@ export default function Header() {
             className="flex gap-4 items-center hover:cursor-pointer"
           >
             <LogoIcon height={30} width={30} />
-            <h1 className="text-xl text-primary">NorShop</h1>
           </motion.div>
         </Link>
         <Nav />
