@@ -6,7 +6,7 @@ export default function Layout() {
   return (
     <div className="bg-background min-h-screen">
       <Header />
-      <div className="pt-[68px] h-full  ">
+      <div className="pt-[68px] h-full">
         <Outlet />
       </div>
       <Footer />
