@@ -1,12 +1,13 @@
 import DisplayProduct from "../../components/product/productPage/DisplayProduct.component";
 import useFetchProduct from "../../common/hooks/useFetchProduct/useFetchProduct";
 import NotFoundPage from "../notFound/NotFoundPage";
+import LoadingSpinner from "../../components/loading/LoadingSpinner.component";
 
 export default function ProductPage() {
   const { product, isLoading, error } = useFetchProduct();
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <LoadingSpinner />;
   }
 
   if (error) {
