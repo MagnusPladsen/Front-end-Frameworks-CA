@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import DownArrow from "../iconComponents/DownArrow.component";
 
@@ -24,24 +24,21 @@ export default function DrawerTab({
           <DownArrow />
         </motion.div>
       </div>
-      <motion.div
-        initial="visible"
-        animate={open ? "visible" : "hidden"}
-        exit="hidden"
-        variants={{
-          visible: {
-            opacity: 1,
-            height: "auto",
-          },
-          hidden: { opacity: 0, height: 0, margin: 0 },
-        }}
-        transition={{ duration: 0.3 }}
-        className="text-sm"
-      >
-        <div className="w-full lg:px-5 border-y border-background bg-gray-50 pb-5">
-          {children}
-        </div>
-      </motion.div>
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+            className="text-sm overflow-hidden"
+          >
+            <div className="w-full lg:px-5 border-y border-background bg-gray-50 pb-5">
+              {children}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }

@@ -21,7 +21,7 @@ export default function ProductImage({
         src={srcUrl}
         alt={alt}
         className={`${imageClassName} h-full w-full object-cover ${
-          cartMode && "rounded-none"
+          cartMode && "!rounded-none"
         } ${!fullSize && "rounded-t "}`}
       />
     </div>
