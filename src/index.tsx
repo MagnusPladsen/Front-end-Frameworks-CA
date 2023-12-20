@@ -8,7 +8,7 @@ import Layout from "./components/Layout/Layout.component";
 import ProductPage from "./pages/product/ProductPage";
 import CartPage from "./pages/cart/CartPage";
 import NotFoundPage from "./pages/notFound/NotFoundPage";
-import CartProvider from "./context/cart";
+import CartProvider from "./common/context/cart";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>

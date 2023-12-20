@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { CartContext } from "../../../context/cart";
+import { CartContext } from "../../context/cart";
 
 /**
  * @description The useCart function returns the value of the CartContext.
