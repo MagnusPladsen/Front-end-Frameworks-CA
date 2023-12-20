@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { Product } from "../../../common/models/models";
 import DefaultButton from "../../buttons/DefaultButton.component";
 import SaleBadge from "../../sale/SaleBadge.component";
-import ProductImage from "../common/ProductImage.component";
+import ProductImage from "../ProductImage.component";
 import ProductBody from "./ProductBody.component";
 import ProductTitle from "./ProductTitle.component";
 

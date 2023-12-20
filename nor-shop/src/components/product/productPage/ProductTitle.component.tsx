@@ -1,5 +1,5 @@
 import { Product } from "../../../common/models/models";
-import ProductStars from "../common/ProductStars.component";
+import ProductStars from "../ProductStars.component";
 
 export default function ProductTitle({
   product,

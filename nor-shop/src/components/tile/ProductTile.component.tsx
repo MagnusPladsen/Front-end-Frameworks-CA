@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { Product } from "../../common/models/models";
-import ProductImage from "../product/common/ProductImage.component";
-import ProductPrice from "../product/common/ProductPrice.component";
-import ProductStars from "../product/common/ProductStars.component";
+import ProductImage from "../product/ProductImage.component";
+import ProductPrice from "../product/ProductPrice.component";
+import ProductStars from "../product/ProductStars.component";
 import SaleBadge from "../sale/SaleBadge.component";
 import TileWrapper from "./TileWapper.component";
 

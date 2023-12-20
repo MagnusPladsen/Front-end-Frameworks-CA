@@ -1,5 +1,5 @@
 import { Product } from "../../../common/models/models";
-import ProductPrice from "../common/ProductPrice.component";
+import ProductPrice from "../ProductPrice.component";
 
 export default function ProductBody({
   product,
