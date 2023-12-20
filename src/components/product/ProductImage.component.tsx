@@ -14,7 +14,7 @@ export default function ProductImage({
   return (
     <div
       className={`${fullSize && "lg:h-[600px] lg:max-w-md"} ${
-        cartMode && "w-[100px] h-full"
+        cartMode && "!w-[100px] h-full"
       } w-full h-60 shadow-inner`}
     >
       <img

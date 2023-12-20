@@ -17,7 +17,6 @@ export default function useProducts() {
   const [products, setProducts] = useState<Product[]>([]);
 
   const getProducts = useCallback(async () => {
-    console.log("getProducts");
     try {
       setIsLoading(true);
       setError(false);
