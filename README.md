@@ -15,7 +15,7 @@
 </br>
 
 # Mobile
-![image](https://github.com/MagnusPladsen/Front-end-Frameworks-CA/assets/93226629/f87250d0-c450-4527-b700-290816fb4f0c)
+![image](https://github.com/MagnusPladsen/Front-end-Frameworks-CA/assets/93226629/8f3f25d0-0b27-41bc-a25b-69ff5233f06a)
 
 # Desktop
 ![image](https://github.com/MagnusPladsen/Front-end-Frameworks-CA/assets/93226629/9dbbf7fb-e127-4609-9e41-71a41a722f79)
