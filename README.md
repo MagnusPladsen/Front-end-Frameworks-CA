@@ -1,12 +1,14 @@
 # How to
 
-## Install
+### Install
 
 ```npm install```
 
-## Run
+### Run
 
 ```npm run start```
+
+</br>
 
 # Course Assignment
 
