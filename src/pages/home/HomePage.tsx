@@ -1,10 +1,10 @@
-import useFetchProducts from "../../common/hooks/useFetchProducts/useFetchProducts";
+import useProductsContext from "../../common/hooks/useProductsContext/useProductsContext";
 import { Product } from "../../common/models/models";
 import PageStateHandler from "../../components/pageStateHandler/PageStateHandler.component";
 import ProductTile from "../../components/tile/ProductTile.component";
 
 export default function HomePage() {
-  const { products, isLoading, error } = useFetchProducts();
+  const { products, isLoading, error } = useProductsContext();
   return (
     <PageStateHandler
       isLoading={isLoading}

@@ -4,7 +4,7 @@ import { Product } from "../../models/models";
 import { useParams } from "react-router-dom";
 
 /**
- * The function `useFetchProduct` is an asynchronous function that fetches product with an ID from an API and
+ * The function `useProduct` is an asynchronous function that fetches product with an ID from an API and
  * returns the product, loading state, and error state.
  * @returns an object with three properties: "product", "isLoading", and "error". The "product"
  * property is a Product object, the "isLoading" property is a boolean indicating whether
@@ -12,7 +12,7 @@ import { useParams } from "react-router-dom";
  * occurred during the fetch request.
  */
 
-export default function useFetchProduct() {
+export default function useProduct() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
   const [product, setProduct] = useState<Product>();
@@ -34,7 +34,7 @@ export default function useFetchProduct() {
         setProduct(product);
       } catch (error) {
         setError(true);
-        console.log("ERROR in useFetchProduct:", error);
+        console.log("ERROR in useProduct:", error);
       } finally {
         setIsLoading(false);
       }

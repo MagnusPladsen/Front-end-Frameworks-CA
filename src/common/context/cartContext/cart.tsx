@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect } from "react";
-import { CartContextProps, CartItem, Product } from "../models/models";
+import { CartContextProps, CartItem, Product } from "../../models/models";
 
 export const CartContext = createContext<CartContextProps>({
   cartItems: [],

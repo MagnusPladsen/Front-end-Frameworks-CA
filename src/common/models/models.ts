@@ -30,3 +30,10 @@ export interface CartContextProps {
   getCartQuantity: () => number;
   updateQuantity: (item: Product, quantity: number) => void;
 }
+
+export interface ProductContextProps {
+  products: Product[];
+  isLoading: boolean;
+  error: boolean;
+  updateProducts: () => void;
+}
