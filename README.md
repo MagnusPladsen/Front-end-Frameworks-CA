@@ -1,12 +1,16 @@
-# How to
+# Run app
 
-### Install
+### Install node modules
 
 ```npm install```
 
-### Run
+### Run application in development mode
 
 ```npm run start```
+
+### Build application for production
+
+```npm run build```
 
 </br>
 
