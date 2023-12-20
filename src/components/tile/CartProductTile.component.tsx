@@ -49,7 +49,7 @@ export default function CartProductTile({ product }: { product: CartItem }) {
           </div>
         </TileWrapper>
         <div
-          className="text-red-300 hover:bg-red-500 hover:text-white h-fit px-3 py-1 flex items-center justify-center hover:cursor-pointer textlgl bg-white rounded-full transition-all border font-thin border-red-500  "
+          className="text-red-400 hover:bg-red-200 hover:text-white h-fit px-[10px] py-[2px] flex items-center justify-center hover:cursor-pointer text-lg bg-white rounded-full transition-all border border-red-200 "
           onClick={() => {
             setAmount(0);
             removeFromCart(product);
