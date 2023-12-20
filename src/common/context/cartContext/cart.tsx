@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useEffect, useState } from "react";
 import { CartContextProps, CartItem, Product } from "../../models/models";
 
 export const CartContext = createContext<CartContextProps>({
@@ -9,6 +9,7 @@ export const CartContext = createContext<CartContextProps>({
   getCartTotal: () => 0,
   getCartQuantity: () => 0,
   updateQuantity: () => {},
+  showNotification: false,
 });
 
 const CartProvider = ({ children }: { children: React.ReactNode }) => {
@@ -18,7 +19,19 @@ const CartProvider = ({ children }: { children: React.ReactNode }) => {
       : []
   );
 
+  const [showNotification, setShowNotification] = useState<boolean>(false);
+
+  const handleShowNotification = () => {
+    setShowNotification(true);
+
+    // Hide the notification after a certain duration
+    setTimeout(() => {
+      setShowNotification(false);
+    }, 1500); // Adjust the duration as needed
+  };
+
   const addToCart = (item: Product, quantity: number) => {
+    handleShowNotification();
     const isItemInCart = cartItems.find((cartItem) => cartItem.id === item.id);
 
     if (isItemInCart) {
@@ -82,6 +95,7 @@ const CartProvider = ({ children }: { children: React.ReactNode }) => {
         getCartTotal,
         getCartQuantity,
         updateQuantity,
+        showNotification,
       }}
     >
       {children}

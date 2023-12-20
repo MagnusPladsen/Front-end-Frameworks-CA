@@ -40,4 +40,4 @@ const ProductsProvider = ({
   );
 };
 
-export default ProductsProvider;
+export default ProductsProvider; 
