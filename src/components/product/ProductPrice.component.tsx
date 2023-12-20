@@ -4,6 +4,7 @@ import useCart from "../../common/hooks/useCart/useCart";
 import { Product } from "../../common/models/models";
 import DefaultButton from "../buttons/DefaultButton.component";
 import FormatPrice from "../formatters/FormatPrice.component";
+import AddToCartNotification from "../notifications/AddToCartNotification.component";
 
 export default function ProductPrice({
   product,
@@ -24,7 +25,7 @@ export default function ProductPrice({
   viewButton?: boolean;
   cartMode?: boolean;
 }) {
-  const { addToCart } = useCart();
+  const { addToCart, showNotification } = useCart();
   const [amount, setAmount] = useState(1);
   return (
     <div className="flex justify-between items-end">
@@ -75,9 +76,10 @@ export default function ProductPrice({
               className="border border-background focus:border-primary w-14 px-3 rounded"
             />
             <DefaultButton
-              text="+ Add to cart"
+              text={`+ Add to cart`}
               className="!bg-green-800 !border-green-800 hover:!text-green-800 hover:!bg-white"
               onClick={() => addToCart(product, amount)}
+              disabled={showNotification}
             />
           </div>
         )}

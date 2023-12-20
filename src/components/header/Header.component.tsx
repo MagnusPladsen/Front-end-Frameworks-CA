@@ -9,7 +9,10 @@ export default function Header() {
       <div className="flex justify-between lg:w-[90vw] 2xl:w-[1500px] lg:mx-auto">
         <Link to="/">
           <motion.div
-            whileHover={{ scale: 1.1, opacity: 0.6 }}
+            whileHover={{
+              opacity: 0.6,
+            }}
+            transition={{ duration: 0.2 }}
             className="flex gap-4 items-center hover:cursor-pointer"
           >
             <LogoIcon height={30} width={30} />
