@@ -14,6 +14,15 @@
 
 </br>
 
+# Mobile
+![image](https://github.com/MagnusPladsen/Front-end-Frameworks-CA/assets/93226629/f87250d0-c450-4527-b700-290816fb4f0c)
+
+# Desktop
+![image](https://github.com/MagnusPladsen/Front-end-Frameworks-CA/assets/93226629/9dbbf7fb-e127-4609-9e41-71a41a722f79)
+
+
+</br>
+
 # Course Assignment
 
 ## Goal
