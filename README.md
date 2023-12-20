@@ -1,3 +1,13 @@
+# How to
+
+## Install
+
+```npm install```
+
+## Run
+
+```npm run start```
+
 # Course Assignment
 
 ## Goal
