@@ -1,18 +1,15 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import useCart from "../../common/hooks/useCart/useCart";
 import { CartItem } from "../../common/models/models";
-import ProductQuantity from "../product/cartPage/ProductQuantity.component";
 import ProductImage from "../product/ProductImage.component";
 import ProductPrice from "../product/ProductPrice.component";
+import ProductQuantity from "../product/cartPage/ProductQuantity.component";
 import SaleBadge from "../sale/SaleBadge.component";
 import TileWrapper from "./TileWapper.component";
 
 export default function CartProductTile({ product }: { product: CartItem }) {
   const isSale = product.price !== product.discountedPrice;
   const { removeFromCart } = useCart();
-
-  const [amount, setAmount] = useState(product.quantity || 1);
 
   return (
     <div className="flex flex-col gap-3 max-w-[500px] lg:min-w-[500px] lg:mx-auto ">
@@ -51,7 +48,6 @@ export default function CartProductTile({ product }: { product: CartItem }) {
         <div
           className="text-red-400 hover:bg-red-200 hover:text-white h-fit px-[10px] py-[2px] flex items-center justify-center hover:cursor-pointer text-lg bg-white rounded-full transition-all border border-red-200 "
           onClick={() => {
-            setAmount(0);
             removeFromCart(product);
           }}
         >

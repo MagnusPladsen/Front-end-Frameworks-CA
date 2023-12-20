@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Product } from "../../common/models/models";
 import ProductImage from "../product/ProductImage.component";
 import ProductPrice from "../product/ProductPrice.component";

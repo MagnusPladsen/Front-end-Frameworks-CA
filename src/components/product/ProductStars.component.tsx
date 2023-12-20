@@ -1,5 +1,4 @@
 import StarRatings from "react-star-ratings";
-import { Product } from "../../common/models/models";
 
 export default function ProductStars({
   rating,
