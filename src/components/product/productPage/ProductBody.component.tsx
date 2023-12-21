@@ -9,17 +9,18 @@ export default function ProductBody({
   isSale: boolean;
 }) {
   return (
-    <>
-      <p className="text-black pb-5">{product.description}</p>
-      <p className="pb-6">Tags: {" "}
+    <div className="flex flex-col gap-5">
+      <p className="text-black text-xs ">
+        Tags:{" "}
         {product.tags.map((tag, index) => (
-          <span key={tag} className="text-primary mr-1">
+          <span key={tag} className={`${index === 0 && "ml-1"} mr-1`}>
             {tag}
             {index !== product.tags.length - 1 && ","}
           </span>
         ))}
       </p>
+      <p className="text-primary pb-5">{product.description}</p>
       <ProductPrice product={product} isSale={isSale} buyButton />
-    </>
+    </div>
   );
 }
