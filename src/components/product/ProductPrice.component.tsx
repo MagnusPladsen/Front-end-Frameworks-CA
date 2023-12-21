@@ -73,7 +73,7 @@ export default function ProductPrice({
             />
 
             <DefaultButton
-              text={`+ Add to cart`}
+              text={`${showNotification ? "Added to cart" : "+ Add to cart"}`}
               className="!bg-green-800 !border-green-800 hover:!text-green-800 hover:!bg-white"
               onClick={() => addToCart(product, amount)}
               disabled={showNotification}

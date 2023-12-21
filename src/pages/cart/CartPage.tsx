@@ -3,6 +3,7 @@ import DefaultButton from "../../components/buttons/DefaultButton.component";
 import useCart from "../../common/hooks/useCart/useCart";
 import CartProductTile from "../../components/tile/CartProductTile.component";
 import FormatPrice from "../../components/formatters/FormatPrice.component";
+import H1 from "../../common/text/H1.component";
 
 export default function CartPage() {
   const navigate = useNavigate();
@@ -15,7 +16,7 @@ export default function CartPage() {
 
   return (
     <div className="bg-white p-6 py-10 lg:pb-20 rounded-b flex flex-col lg:gap-10 gap-10 w-full lg:w-[800px] lg:mx-auto items-center justify-center shadow">
-      <h1 className="text-xl">Cart</h1>
+      <H1>Cart</H1>
       {cartItems.length === 0 ? (
         <p className="text-center">Your cart is empty</p>
       ) : (

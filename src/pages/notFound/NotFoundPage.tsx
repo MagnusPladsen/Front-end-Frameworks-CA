@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import DefaultButton from "../../components/buttons/DefaultButton.component";
+import H1 from "../../common/text/H1.component";
 
 export default function NotFoundPage({
   text,
@@ -19,7 +20,7 @@ export default function NotFoundPage({
   }
   return (
     <div className="bg-white p-6 py-20 lg:px-40 lg:pb-40 rounded-b flex flex-col gap-10 w-full lg:w-fit lg:mx-auto items-center justify-center shadow">
-      <h1 className="font-bold text-2xl">{headerText ?? headerString}</h1>
+      <H1>{headerText ?? headerString}</H1>
       <h2>{text ?? textString}</h2>
       <Link className="mt-10" to="/">
         <DefaultButton text="Home" />

@@ -1,4 +1,5 @@
 import { Product } from "../../../common/models/models";
+import H1 from "../../../common/text/H1.component";
 import ProductStars from "../ProductStars.component";
 
 export default function ProductTitle({
@@ -10,7 +11,7 @@ export default function ProductTitle({
 }) {
   return (
     <div className="flex justify-between items-baseline ">
-      <h1 className="text-lg font-bold">{product.title}</h1>
+      <H1>{product.title}</H1>
       <div
         className="transition-all hover:opacity-80 hover:cursor-pointer"
         onClick={() => onStarsClick()}
