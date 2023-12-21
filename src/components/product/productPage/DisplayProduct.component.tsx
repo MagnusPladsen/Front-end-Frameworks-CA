@@ -13,7 +13,7 @@ export default function DisplayProduct({ product }: { product: Product }) {
         title={`Reviews (${product.reviews.length})`}
         scrollToRef={reviewsRef}
       >
-        <ProductReviews reviews={product.reviews} />{" "}
+        <ProductReviews reviews={product.reviews} />
       </DrawerTab>
     </div>
   );
