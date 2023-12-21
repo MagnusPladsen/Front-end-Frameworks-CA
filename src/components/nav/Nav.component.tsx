@@ -2,7 +2,7 @@ import useCart from "../../common/hooks/useCart/useCart";
 import usePath from "../../common/hooks/usePath/usePath";
 import AddToCartNotification from "../notifications/AddToCartNotification.component";
 import DesktopNav from "./DesktopNav.component";
-import MobileNav from "./MobileNav.componen";
+import MobileNav from "./MobileNav.component";
 
 export default function Nav() {
   const { currentPath } = usePath();
