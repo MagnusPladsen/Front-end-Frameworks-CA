@@ -4,14 +4,18 @@ import H1 from "../../common/text/H1.component";
 
 export default function NotFoundPage({
   text,
+  headerText,
   error,
 }: {
   text?: string;
+  headerText?: string;
   error?: boolean;
 }) {
+  let headerString = "Page not found";
   let textString = "The page you are looking for was not found...";
 
   if (error) {
+    headerString = "Error 404";
     textString = "Something went wrong, please try again";
   }
   return (
