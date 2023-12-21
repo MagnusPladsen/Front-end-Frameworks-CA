@@ -6,7 +6,6 @@ export default function Input({
   placeholder,
   type = "text",
   flexRow = false,
-  flexCol = true,
 }: {
   value: string;
   label?: string;
@@ -15,16 +14,14 @@ export default function Input({
   placeholder?: string;
   type?: string;
   flexRow?: boolean;
-  flexCol?: boolean;
 }) {
   return (
     <div
-      className={`flex ${flexRow && !flexCol && "!flex-row !items-center !gap-5 "} ${
-        flexCol && !flexRow && "!flex-col !items-start !gap-3 "
-      }  w-full `}
+      className={`flex flex-col items-start gap-3 w-full
+       ${flexRow && "!flex-row !items-center !gap-5 "}`}
     >
       {!!label && (
-        <label className={` font-bold text-md text-primary`}>{label}</label>
+        <label className={` font-bold text-sm text-primary`}>{label}</label>
       )}
       <input
         type={type}
