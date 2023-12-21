@@ -8,8 +8,8 @@ import Layout from "./components/Layout/Layout.component";
 import ProductPage from "./pages/product/ProductPage";
 import CartPage from "./pages/cart/CartPage";
 import NotFoundPage from "./pages/notFound/NotFoundPage";
-import CartProvider from "./common/context/cartContext/cart";
-import ProductsContext from "./common/context/productsContext/products";
+import CartProvider from "./context/cartContext/cart";
+import ProductsContext from "./context/productsContext/products";
 import ContactPage from "./pages/contact/ContactPage";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(

@@ -1,5 +1,5 @@
-import { Product } from "../../../common/models/models";
-import H1 from "../../../common/text/H1.component";
+import { Product } from "../../../models/models";
+import H1 from "../../text/H1.component";
 import ProductStars from "../ProductStars.component";
 
 export default function ProductTitle({

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import useCart from "../../../common/hooks/useCart/useCart";
-import { CartItem } from "../../../common/models/models";
+import useCart from "../../../hooks/useCart/useCart";
+import { CartItem } from "../../../models/models";
 
 export default function ProductQuantity({ product }: { product: CartItem }) {
   const { updateQuantity, removeFromCart } = useCart();

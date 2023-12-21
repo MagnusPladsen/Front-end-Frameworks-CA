@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { Product } from "../../common/models/models";
+import { Product } from "../../models/models";
 import DefaultButton from "../buttons/DefaultButton.component";
+import Input from "../form/Input.component";
 
 export default function ProductsSearch({
   setFilteredProducts,
@@ -29,15 +30,13 @@ export default function ProductsSearch({
 
   return (
     <div className="flex flex-col lg:flex-row gap-3 lg:w-fit lg:mx-auto">
-      <div className="flex gap-5 items-center w-full ">
-        <label className="font-bold text-md text-primary">Search</label>
-        <input
+        <Input
           type="text"
-          className="rounded px-3 py-2 border border-primary shadow-inner w-full lg:w-96"
+          label="Search"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
+          flexRow
         />
-      </div>
       {!!search && (
         <DefaultButton
           text="Reset filter"

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import DefaultButton from "../../components/buttons/DefaultButton.component";
-import H1 from "../../common/text/H1.component";
+import H1 from "../../components/text/H1.component";
 
 export default function NotFoundPage({
   text,

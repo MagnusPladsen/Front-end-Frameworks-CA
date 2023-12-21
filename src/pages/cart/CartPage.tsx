@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import DefaultButton from "../../components/buttons/DefaultButton.component";
-import useCart from "../../common/hooks/useCart/useCart";
+import useCart from "../../hooks/useCart/useCart";
 import CartProductTile from "../../components/tile/CartProductTile.component";
 import FormatPrice from "../../components/formatters/FormatPrice.component";
-import H1 from "../../common/text/H1.component";
+import H1 from "../../components/text/H1.component";
 
 export default function CartPage() {
   const navigate = useNavigate();

@@ -1,4 +1,4 @@
-import useProduct from "../../common/hooks/useProduct/useProduct";
+import useProduct from "../../hooks/useProduct/useProduct";
 import PageStateHandler from "../../components/pageStateHandler/PageStateHandler.component";
 import DisplayProduct from "../../components/product/productPage/DisplayProduct.component";
 

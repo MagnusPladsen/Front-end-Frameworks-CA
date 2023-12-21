@@ -1,4 +1,4 @@
-import { Product } from "../../../common/models/models";
+import { Product } from "../../../models/models";
 import ProductPrice from "../ProductPrice.component";
 
 export default function ProductBody({

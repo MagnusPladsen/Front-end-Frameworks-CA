@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import useCart from "../../common/hooks/useCart/useCart";
-import { CartItem } from "../../common/models/models";
+import useCart from "../../hooks/useCart/useCart";
+import { CartItem } from "../../models/models";
 import ProductImage from "../product/ProductImage.component";
 import ProductPrice from "../product/ProductPrice.component";
 import ProductQuantity from "../product/cartPage/ProductQuantity.component";
