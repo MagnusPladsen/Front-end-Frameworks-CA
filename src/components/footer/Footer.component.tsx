@@ -4,7 +4,7 @@ import LogoIcon from "../iconComponents/LogoIcon.component";
 
 export default function Footer() {
   return (
-    <footer className="bg-white mt-20 w-full px-3 py-10 lg:px-0 shadow z-50">
+    <footer className="bg-white mt-40 lg:mt-20 w-full px-3 py-10 lg:px-0 shadow z-50">
       <div className="flex lg:w-[90vw] 2xl:w-[1500px] flex-col lg:flex-row lg:mx-auto lg:items-center justify-between gap-10 lg:gap-5">
         <div className="flex gap-5 items-center ">
           <Link to="/">

@@ -29,13 +29,13 @@ export default function ProductInfo({
   return (
     <div
       key={product.id}
-      className={`text-primary flex flex-col lg:flex-row justify-between w-full min-h-full relative items-end `}
+      className={`text-primary flex flex-col lg:flex-row justify-between w-full min-h-full relative items-start `}
     >
       <SaleBadge isSale={isSale} />
 
       <ProductImage srcUrl={product.imageUrl} alt={product.title} fullSize />
 
-      <div className="w-full flex flex-col gap-3 h-full p-3 lg:p-6 lg:gap-5 pb-10 lg:max-w-md ">
+      <div className="w-full flex flex-col gap-3 h-full p-3 lg:p-6 lg:gap-5 pb-10 lg:max-w-md justify-between lg:mt-5">
         <ProductTitle
           product={product}
           onStarsClick={() => scrollTo(reviewsRef)}
@@ -44,7 +44,7 @@ export default function ProductInfo({
         <DefaultButton
           text="Back"
           onClick={() => goBack()}
-          className="w-fit mx-auto mt-10"
+          className="w-fit mx-auto mt-20"
         />
       </div>
     </div>
