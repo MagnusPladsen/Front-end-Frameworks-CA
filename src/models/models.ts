@@ -1,3 +1,6 @@
+import { z } from "zod";
+import { ValidationSchema } from "../validation/validationSchema";
+
 export interface Product {
   id: string;
   title: string;
@@ -38,3 +41,5 @@ export interface ProductContextProps {
   error: boolean;
   updateProducts: () => void;
 }
+
+export type FormValues = z.infer<typeof ValidationSchema>;

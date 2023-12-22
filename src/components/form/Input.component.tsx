@@ -6,6 +6,7 @@ export default function Input({
   placeholder,
   type = "text",
   flexRow = false,
+  minLength,
 }: {
   value: string;
   label?: string;
@@ -14,6 +15,7 @@ export default function Input({
   placeholder?: string;
   type?: string;
   flexRow?: boolean;
+  minLength?: number;
 }) {
   return (
     <div
@@ -21,7 +23,13 @@ export default function Input({
        ${flexRow && "!flex-row !items-center !gap-5 "}`}
     >
       {!!label && (
-        <label className={`lg:absolute lg:-left-16 font-bold text-sm text-primary`}>{label}</label>
+        <label
+          className={`${
+            flexRow && "lg:absolute lg:-left-16"
+          } font-bold text-sm text-primary`}
+        >
+          {label}
+        </label>
       )}
       <input
         type={type}
@@ -29,6 +37,7 @@ export default function Input({
         value={value}
         onChange={(e) => onChange(e)}
         placeholder={placeholder}
+        minLength={minLength}
       />
     </div>
   );
