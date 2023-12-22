@@ -1,7 +1,5 @@
-import { useState } from "react";
-import Input from "../../components/form/Input.component";
-import H1 from "../../components/text/H1.component";
 import ContactForm from "../../components/form/ContactForm.component";
+import H1 from "../../components/text/H1.component";
 
 export default function ContactPage() {
   return (
