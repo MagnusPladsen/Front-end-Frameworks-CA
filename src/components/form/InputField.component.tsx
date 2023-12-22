@@ -17,7 +17,7 @@ export default function InputField({
 }) {
   if (textArea) {
     return (
-      <div className="flex flex-col items-start gap-3 w-full">
+      <div className="flex flex-col items-start gap-3 w-full mb-5">
         <label className="font-bold text-sm text-primary" htmlFor={name}>
           {label}
         </label>

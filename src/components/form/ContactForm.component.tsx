@@ -53,7 +53,6 @@ export default function ContactForm() {
                 label="Body"
                 name="body"
                 textArea
-                className="mb-5"
                 error={!!errors.body && touched.body}
               />
               <DefaultButton
