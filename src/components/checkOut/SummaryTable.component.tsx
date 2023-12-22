@@ -24,7 +24,7 @@ export default function SummaryTable({
 
   return (
     <div className="w-full flex flex-col text-sm ">
-      <h2 className="underline underline-offset-2 font-bold mb-5">Summary</h2>
+      <h2 className="font-bold mb-5 text-base">Summary:</h2>
 
       <div className={headerStyling.column}>
         <p className={headerStyling.rows.name}>Product</p>
