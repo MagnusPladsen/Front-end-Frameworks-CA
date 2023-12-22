@@ -1,8 +1,7 @@
-import { motion } from "framer-motion";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import FormatPrice from "../formatters/FormatPrice.component";
 import CartIcon from "../iconComponents/CartIcon.component";
-import { useState } from "react";
 import HamburgerIcon from "../iconComponents/HamburgerIcon.component";
 
 export default function MobileNav({
