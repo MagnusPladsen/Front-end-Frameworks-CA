@@ -43,16 +43,15 @@ export default function MobileNav({
       {isDropdownOpen && (
         <ul className="absolute top-12 -right-3 bg-white border rounded shadow-md py-8 w-screen h-screen flex flex-col gap-8 items-center z-50">
           {pages.map((page) => (
-            <li key={page.name}>
-              <Link
-                to={page.path}
-                className={`${
-                  currentPath === page.path && activeStyle
-                } text-primary`}
-              >
-                {page.name}
-              </Link>
-            </li>
+            <Link
+              key={page.name}
+              to={page.path}
+              className={`${
+                currentPath === page.path && activeStyle
+              } text-primary`}
+            >
+              <li onClick={() => toggleDropdown()}>{page.name}</li>
+            </Link>
           ))}
         </ul>
       )}
