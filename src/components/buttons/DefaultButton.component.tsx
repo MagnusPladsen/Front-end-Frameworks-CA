@@ -17,7 +17,7 @@ export default function DefaultButton({
     return (
       <button
         disabled={disabled}
-        className={`text-gray-400 bg-gray-100 py-2 px-4 rounded border border-gray-400 shadow `}
+        className={`text-gray-400 bg-gray-100 py-2 px-4 rounded border border-gray-400 shadow w-fit mx-auto`}
       >
         {text}
       </button>
@@ -28,7 +28,7 @@ export default function DefaultButton({
     return (
       <motion.button
         onClick={onClick}
-        className={`${className} text-primary bg-white py-2 px-4 rounded border border-primary  hover:text-white transition-all hover:cursor-pointer hover:bg-primary shadow `}
+        className={`${className} text-primary bg-white py-2 px-4 rounded border border-primary  hover:text-white transition-all hover:cursor-pointer hover:bg-primary shadow w-fit mx-auto`}
       >
         {text}
       </motion.button>
@@ -38,7 +38,7 @@ export default function DefaultButton({
   return (
     <motion.button
       onClick={onClick}
-      className={`${className} text-white bg-primary py-2 px-4 rounded border border-primary  hover:text-primary transition-all hover:cursor-pointer hover:bg-white shadow `}
+      className={`${className} text-white bg-primary py-2 px-4 rounded border border-primary  hover:text-primary transition-all hover:cursor-pointer hover:bg-white shadow w-fit mx-auto`}
     >
       {text}
     </motion.button>

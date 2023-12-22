@@ -11,6 +11,7 @@ import NotFoundPage from "./pages/notFound/NotFoundPage";
 import CartProvider from "./context/cartContext/cart";
 import ProductsContext from "./context/productsContext/products";
 import ContactPage from "./pages/contact/ContactPage";
+import CheckOut from "./pages/checkout/CheckOutPage";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
@@ -22,6 +23,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
               <Route index element={<HomePage />} />
               <Route path="product/:id" element={<ProductPage />} />
               <Route path="cart" element={<CartPage />} />
+              <Route path="cart/checkout" element={<CheckOut />} />
               <Route path="contact" element={<ContactPage />} />
               <Route path="*" element={<NotFoundPage />} />
             </Route>
