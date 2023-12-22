@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { Product } from "../../../common/models/models";
+import { Product } from "../../../models/models";
 import DrawerTab from "../../drawer/DrawerTab.component";
 import ProductInfo from "./ProductInfo.component";
 import ProductReviews from "./ProductReviews.component";

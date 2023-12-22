@@ -1,4 +1,4 @@
-import { Product } from "../../common/models/models";
+import { Product } from "../../models/models";
 import ProductImage from "../product/ProductImage.component";
 import ProductPrice from "../product/ProductPrice.component";
 import ProductStars from "../product/ProductStars.component";

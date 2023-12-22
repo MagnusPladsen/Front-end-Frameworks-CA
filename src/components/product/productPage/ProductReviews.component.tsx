@@ -1,4 +1,4 @@
-import { Review } from "../../../common/models/models";
+import { Review } from "../../../models/models";
 import ProductStars from "../ProductStars.component";
 
 export default function ProductReviews({ reviews }: { reviews: Review[] }) {

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import useCart from "../../common/hooks/useCart/useCart";
-import { Product } from "../../common/models/models";
+import useCart from "../../hooks/useCart/useCart";
+import { Product } from "../../models/models";
 import DefaultButton from "../buttons/DefaultButton.component";
 import FormatPrice from "../formatters/FormatPrice.component";
 
@@ -58,7 +58,7 @@ export default function ProductPrice({
       <div className="flex gap-3">
         {viewButton && (
           <Link to={`/product/${product.id}`}>
-            <DefaultButton text="View Product" secondary />
+            <DefaultButton text="View" secondary />
           </Link>
         )}{" "}
         {buyButton && (

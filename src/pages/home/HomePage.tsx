@@ -1,6 +1,6 @@
 import { useState } from "react";
-import useProductsContext from "../../common/hooks/useProductsContext/useProductsContext";
-import { Product } from "../../common/models/models";
+import useProductsContext from "../../hooks/useProductsContext/useProductsContext";
+import { Product } from "../../models/models";
 import ProductsSearch from "../../components/home/ProductsSearch.component";
 import PageStateHandler from "../../components/pageStateHandler/PageStateHandler.component";
 import ProductTile from "../../components/tile/ProductTile.component";
