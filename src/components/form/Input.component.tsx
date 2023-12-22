@@ -21,7 +21,13 @@ export default function Input({
        ${flexRow && "!flex-row !items-center !gap-5 "}`}
     >
       {!!label && (
-        <label className={`lg:absolute lg:-left-16 font-bold text-sm text-primary`}>{label}</label>
+        <label
+          className={`${
+            flexRow && "lg:absolute lg:-left-16"
+          } font-bold text-sm text-primary`}
+        >
+          {label}
+        </label>
       )}
       <input
         type={type}
