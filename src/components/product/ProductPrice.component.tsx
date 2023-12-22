@@ -58,7 +58,7 @@ export default function ProductPrice({
       <div className="flex gap-3">
         {viewButton && (
           <Link to={`/product/${product.id}`}>
-            <DefaultButton text="View Product" secondary />
+            <DefaultButton text="View" secondary />
           </Link>
         )}{" "}
         {buyButton && (

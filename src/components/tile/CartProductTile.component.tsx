@@ -12,7 +12,7 @@ export default function CartProductTile({ product }: { product: CartItem }) {
   const { removeFromCart } = useCart();
 
   return (
-    <div className="flex flex-col gap-3 max-w-[500px] lg:min-w-[500px] lg:mx-auto ">
+    <div className="flex flex-col max-w-[500px] lg:min-w-[500px] lg:mx-auto ">
       <div className="flex items-top w-full gap-3 ">
         <TileWrapper productId={product.id} cartMode>
           <div className="hidden lg:block">
