@@ -17,11 +17,11 @@ export default function Input({
 }) {
   return (
     <div
-      className={`flex flex-col items-start gap-3 w-full
+      className={`flex flex-col items-start gap-3 w-full relative
        ${flexRow && "!flex-row !items-center !gap-5 "}`}
     >
       {!!label && (
-        <label className={` font-bold text-sm text-primary`}>{label}</label>
+        <label className={`lg:absolute lg:-left-16 font-bold text-sm text-primary`}>{label}</label>
       )}
       <input
         type={type}
