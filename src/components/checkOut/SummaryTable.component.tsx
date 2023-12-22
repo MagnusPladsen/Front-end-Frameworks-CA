@@ -4,9 +4,11 @@ import FormatPrice from "../formatters/FormatPrice.component";
 export default function SummaryTable({
   cartItems,
   cartTotal,
+  cartQuantity,
 }: {
   cartItems: CartItem[];
   cartTotal: number;
+  cartQuantity: number;
 }) {
   const headerStyling = {
     column: "flex justify-between w-full font-bold mb-2 rounded-t border-b",
@@ -42,9 +44,8 @@ export default function SummaryTable({
       ))}
       <div className={headerStyling.column + " mt-4"}>
         <p className={headerStyling.rows.name}>Total</p>
-        <p className={headerStyling.rows.amount}></p>
+        <p className={headerStyling.rows.amount}>{cartQuantity}</p>
         <p className={headerStyling.rows.price}>
-          {" "}
           <FormatPrice price={cartTotal} />
         </p>
       </div>

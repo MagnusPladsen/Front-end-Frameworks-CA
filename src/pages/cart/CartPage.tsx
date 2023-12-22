@@ -27,9 +27,11 @@ export default function CartPage() {
         </div>
       )}
       <div className="mt-10 flex flex-col gap-10">
-        <Link to="/cart/checkout">
-          <DefaultButton text="Checkout" />
-        </Link>
+        {cartItems.length > 0 && getCartTotal() > 0 && (
+          <Link to="/cart/checkout">
+            <DefaultButton text="Checkout" />
+          </Link>
+        )}
         <DefaultButton text="Back" onClick={() => goBack()} secondary />
       </div>
 

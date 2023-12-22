@@ -24,8 +24,16 @@ export default function ProductPrice({
   viewButton?: boolean;
   cartMode?: boolean;
 }) {
-  const { addToCart, showNotification } = useCart();
+  const { addToCart } = useCart();
+
   const [amount, setAmount] = useState(1);
+  const [addedToCart, setAddedToCart] = useState(false);
+
+  const addToCartHandler = () => {
+    addToCart(product, amount);
+    setAddedToCart(true);
+  };
+
   return (
     <div className="flex justify-between items-end">
       <div
@@ -63,21 +71,27 @@ export default function ProductPrice({
         )}{" "}
         {buyButton && (
           <div className="flex gap-3">
-            <input
-              value={amount}
-              max={10}
-              min={1}
-              type="number"
-              onChange={(e) => setAmount(Number(e.target.value))}
-              className="border border-background focus:border-primary w-14 px-3 rounded"
-            />
-
-            <DefaultButton
-              text={`${showNotification ? "Added to cart" : "+ Add to cart"}`}
-              className="!bg-green-800 !border-green-800 hover:!text-green-800 hover:!bg-white"
-              onClick={() => addToCart(product, amount)}
-              disabled={showNotification}
-            />
+            {addedToCart ? (
+              <Link to="/cart">
+                <DefaultButton text={"Go to cart"} secondary />
+              </Link>
+            ) : (
+              <>
+                <input
+                  value={amount}
+                  max={10}
+                  min={1}
+                  type="number"
+                  onChange={(e) => setAmount(Number(e.target.value))}
+                  className="border border-background focus:border-primary w-14 px-3 rounded"
+                />
+                <DefaultButton
+                  text={"+ Add to cart"}
+                  className="!bg-green-800 !border-green-800 hover:!text-green-800 hover:!bg-white"
+                  onClick={() => addToCartHandler()}
+                />
+              </>
+            )}
           </div>
         )}
       </div>

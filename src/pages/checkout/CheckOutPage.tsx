@@ -5,7 +5,7 @@ import useCart from "../../hooks/useCart/useCart";
 import SummaryTable from "../../components/checkOut/SummaryTable.component";
 
 export default function CheckOut() {
-  const { cartItems, getCartTotal, clearCart } = useCart();
+  const { cartItems, getCartTotal, getCartQuantity, clearCart } = useCart();
 
   return (
     <div className="bg-white p-6 py-10 lg:pb-20 rounded-b w-full lg:w-[800px] lg:mx-auto shadow">
@@ -13,7 +13,11 @@ export default function CheckOut() {
         <H1>Thanks for your order!</H1>
         <div className=" flex flex-col gap-10 ">
           <p className="text-center">Your order was successfully processed!</p>
-          <SummaryTable cartItems={cartItems} cartTotal={getCartTotal()} />
+          <SummaryTable
+            cartItems={cartItems}
+            cartQuantity={getCartQuantity()}
+            cartTotal={getCartTotal()}
+          />
           <p className="text-sm text-left">
             You will receive an email with your order summary shortly! Please
             contact us as soon as possible if you have not received an email
@@ -22,7 +26,7 @@ export default function CheckOut() {
         </div>
 
         <Link to="/">
-          <DefaultButton text="Home" />
+          <DefaultButton text="Home" onClick={() => clearCart()} />
         </Link>
       </div>
     </div>
