@@ -6,12 +6,14 @@ export default function DefaultButton({
   onClick,
   disabled = false,
   secondary = false,
+  type = "button",
 }: {
   text?: string;
   className?: string;
   onClick?: () => void;
   disabled?: boolean;
   secondary?: boolean;
+  type?: "button" | "submit";
 }) {
   if (disabled) {
     return (
@@ -29,6 +31,7 @@ export default function DefaultButton({
       <motion.button
         onClick={onClick}
         className={`${className} text-primary bg-white py-2 px-4 rounded border border-primary  hover:text-white transition-all hover:cursor-pointer hover:bg-primary shadow w-fit mx-auto`}
+        type={type}
       >
         {text}
       </motion.button>
@@ -39,6 +42,7 @@ export default function DefaultButton({
     <motion.button
       onClick={onClick}
       className={`${className} text-white bg-primary py-2 px-4 rounded border border-primary  hover:text-primary transition-all hover:cursor-pointer hover:bg-white shadow w-fit mx-auto`}
+      type={type}
     >
       {text}
     </motion.button>

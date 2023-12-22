@@ -6,6 +6,7 @@ export default function Input({
   placeholder,
   type = "text",
   flexRow = false,
+  minLength,
 }: {
   value: string;
   label?: string;
@@ -14,6 +15,7 @@ export default function Input({
   placeholder?: string;
   type?: string;
   flexRow?: boolean;
+  minLength?: number;
 }) {
   return (
     <div
@@ -35,6 +37,7 @@ export default function Input({
         value={value}
         onChange={(e) => onChange(e)}
         placeholder={placeholder}
+        minLength={minLength}
       />
     </div>
   );
