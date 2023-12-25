@@ -1,11 +1,21 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import DefaultButton from "../../components/buttons/DefaultButton.component";
+import SummaryTable from "../../components/checkOut/SummaryTable.component";
 import H1 from "../../components/text/H1.component";
 import useCart from "../../hooks/useCart/useCart";
-import SummaryTable from "../../components/checkOut/SummaryTable.component";
+import { CartItem } from "../../models/models";
 
 export default function CheckOut() {
   const { cartItems, getCartTotal, getCartQuantity, clearCart } = useCart();
+
+  const [products, setProducts] = useState<CartItem[]>([...cartItems]);
+  const [cartTotal, setCartTotal] = useState<number>(getCartTotal());
+  const [cartQuantity, setCartQuantity] = useState<number>(getCartQuantity());
+
+  useEffect(() => {
+    clearCart();
+  }, [clearCart]);
 
   return (
     <div className="bg-white p-6 py-10 lg:pb-20 rounded-b w-full lg:w-[800px] lg:mx-auto shadow">
@@ -14,9 +24,9 @@ export default function CheckOut() {
         <div className=" flex flex-col gap-10 ">
           <p className="text-center">Your order was successfully processed!</p>
           <SummaryTable
-            cartItems={cartItems}
-            cartQuantity={getCartQuantity()}
-            cartTotal={getCartTotal()}
+            cartItems={products}
+            cartQuantity={cartQuantity}
+            cartTotal={cartTotal}
           />
           <p className="text-sm text-left">
             You will receive an email with your order summary shortly! Please
@@ -26,7 +36,7 @@ export default function CheckOut() {
         </div>
 
         <Link to="/">
-          <DefaultButton text="Home" onClick={() => clearCart()} />
+          <DefaultButton text="Home" />
         </Link>
       </div>
     </div>
