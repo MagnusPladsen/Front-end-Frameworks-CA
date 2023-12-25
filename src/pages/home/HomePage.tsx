@@ -4,17 +4,24 @@ import { Product } from "../../models/models";
 import ProductsSearch from "../../components/home/ProductsSearch.component";
 import PageStateHandler from "../../components/pageStateHandler/PageStateHandler.component";
 import ProductTile from "../../components/tile/ProductTile.component";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import H1 from "../../components/text/H1.component";
+import DefaultButton from "../../components/buttons/DefaultButton.component";
 
 export default function HomePage() {
   const { products, isLoading, error } = useProductsContext();
   const location = useLocation();
 
+  const navigate = useNavigate();
+
   const queryParams = new URLSearchParams(location.search);
   const tagQuery = queryParams.get("tag");
 
   const [filteredProducts, setFilteredProducts] = useState<Product[]>(products);
+
+  function goBack() {
+    navigate(-1);
+  }
 
   return (
     <PageStateHandler
@@ -30,7 +37,20 @@ export default function HomePage() {
               products={products}
             />
           ) : (
-              <H1>{tagQuery}<H1 />
+            <div className="flex flex-col items-center gap-10">
+              <H1>Sorted by tag: "{tagQuery}"</H1>
+              <div className="flex gap-5">
+                <DefaultButton
+                  text="Back"
+                  onClick={() => goBack()}
+                  secondary
+                  className="w-fit mx-auto"
+                />
+                <Link to="/">
+                  <DefaultButton text="Home" className="w-fit mx-auto" />
+                </Link>
+              </div>
+            </div>
           )}
           <div className="flex flex-col lg:flex-row lg:flex-wrap gap-3 justify-center">
             {!!!tagQuery

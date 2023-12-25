@@ -58,7 +58,7 @@ export default function ProductPrice({
           <FormatPrice price={product.price} />
         </p>
         {isSale && cartMode && (
-          <p className={`${discountedPriceClassName} text-green-500 text-sm `}>
+          <p className={`${discountedPriceClassName} text-green-500 text-sm whitespace-nowrap`}>
             - <FormatPrice price={product.price - product.discountedPrice} />
           </p>
         )}

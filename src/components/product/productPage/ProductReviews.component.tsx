@@ -19,7 +19,7 @@ export default function ProductReviews({ reviews }: { reviews: Review[] }) {
           </div>
         ))
       ) : (
-        <h3 className="p-3 text-primary">
+        <h3 className="p-3 ">
           No reviews has been made for this product.
         </h3>
       )}
