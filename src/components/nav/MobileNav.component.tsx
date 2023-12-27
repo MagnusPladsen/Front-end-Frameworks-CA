@@ -52,6 +52,12 @@ export default function MobileNav({
               <li onClick={() => toggleDropdown()}>{page.name}</li>
             </Link>
           ))}
+          <Link
+            to={"/cart"}
+            className={`${currentPath === "/cart" && activeStyle} text-primary`}
+          >
+            <li onClick={() => toggleDropdown()}>Cart</li>
+          </Link>
         </ul>
       )}
     </div>
