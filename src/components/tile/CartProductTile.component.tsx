@@ -4,7 +4,6 @@ import { CartItem } from "../../models/models";
 import ProductImage from "../product/ProductImage.component";
 import ProductPrice from "../product/ProductPrice.component";
 import ProductQuantity from "../product/cartPage/ProductQuantity.component";
-import SaleBadge from "../sale/SaleBadge.component";
 import TileWrapper from "./TileWapper.component";
 
 export default function CartProductTile({ product }: { product: CartItem }) {

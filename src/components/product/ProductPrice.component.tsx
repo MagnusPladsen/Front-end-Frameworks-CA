@@ -27,6 +27,7 @@ export default function ProductPrice({
   const { addToCart, getItemQuantity } = useCart();
   const navigate = useNavigate();
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [inCart, setInCart] = useState<boolean>(!!getItemQuantity(product));
 
   const [amount, setAmount] = useState(1);
