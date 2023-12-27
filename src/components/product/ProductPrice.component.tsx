@@ -24,10 +24,10 @@ export default function ProductPrice({
   viewButton?: boolean;
   cartMode?: boolean;
 }) {
-  const { addToCart } = useCart();
+  const { addToCart, getItemQuantity } = useCart();
   const navigate = useNavigate();
 
-  const [amount, setAmount] = useState(1);
+  const [amount, setAmount] = useState(getItemQuantity(product));
 
   const addToCartHandler = () => {
     addToCart(product, amount);
@@ -50,7 +50,7 @@ export default function ProductPrice({
             Save <FormatPrice price={product.price - product.discountedPrice} />
           </p>
         )}
-        
+
         <p
           className={`${priceClassName} ${cartMode && "!font-medium"} text-xl ${
             isSale && "text-red-500 "
