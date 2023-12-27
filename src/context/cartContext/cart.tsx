@@ -8,6 +8,7 @@ export const CartContext = createContext<CartContextProps>({
   clearCart: () => {},
   getCartTotal: () => 0,
   getCartQuantity: () => 0,
+  getItemQuantity: () => 0,
   updateQuantity: () => {},
   showNotification: false,
 });
@@ -66,6 +67,11 @@ const CartProvider = ({ children }: { children: React.ReactNode }) => {
     return cartItems.reduce((total, item) => total + item.quantity, 0);
   };
 
+  const getItemQuantity = (item: Product) => {
+    const cartItem = cartItems.find((cartItem) => cartItem.id === item.id);
+    return cartItem ? cartItem.quantity : 0;
+  };
+
   const updateQuantity = (item: Product, quantity: number) => {
     setCartItems(
       cartItems.map((cartItem) =>
@@ -94,6 +100,7 @@ const CartProvider = ({ children }: { children: React.ReactNode }) => {
         clearCart,
         getCartTotal,
         getCartQuantity,
+        getItemQuantity,
         updateQuantity,
         showNotification,
       }}

@@ -7,11 +7,7 @@ import H1 from "../../components/text/H1.component";
 
 export default function CartPage() {
   const navigate = useNavigate();
-
-  function goBack() {
-    navigate(-1);
-  }
-
+  
   const { cartItems, getCartTotal } = useCart();
 
   return (
@@ -26,13 +22,17 @@ export default function CartPage() {
           ))}
         </div>
       )}
-      <div className="mt-10 flex flex-col gap-10">
+      <div className="mt-10 flex flex-col gap-10 items-center">
+        <DefaultButton
+          text="Continue shopping"
+          onClick={() => navigate("/")}
+          secondary
+        />
         {cartItems.length > 0 && getCartTotal() > 0 && (
           <Link to="/cart/checkout">
             <DefaultButton text="Checkout" />
           </Link>
         )}
-        <DefaultButton text="Back" onClick={() => goBack()} secondary />
       </div>
 
       <h2 className="flex gap-3 text-xl pt-10">

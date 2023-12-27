@@ -18,9 +18,9 @@ export default function SummaryTable({
   const bodyStyling = {
     column: headerStyling.column + " !mb-0 !font-normal !border-b-0",
     rows: {
-      name: headerStyling.rows.name + " text-ellipsis",
-      amount: headerStyling.rows.amount + " text-ellipsis",
-      price: headerStyling.rows.price + " text-ellipsis",
+      name: headerStyling.rows.name + " truncate",
+      amount: headerStyling.rows.amount + " truncate",
+      price: headerStyling.rows.price + " truncate",
     },
   };
 
