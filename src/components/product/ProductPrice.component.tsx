@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useCart from "../../hooks/useCart/useCart";
 import { Product } from "../../models/models";
 import DefaultButton from "../buttons/DefaultButton.component";
@@ -25,13 +25,13 @@ export default function ProductPrice({
   cartMode?: boolean;
 }) {
   const { addToCart } = useCart();
+  const navigate = useNavigate();
 
   const [amount, setAmount] = useState(1);
-  const [addedToCart, setAddedToCart] = useState(false);
 
   const addToCartHandler = () => {
     addToCart(product, amount);
-    setAddedToCart(true);
+    navigate("/cart");
   };
 
   return (
@@ -50,6 +50,7 @@ export default function ProductPrice({
             Save <FormatPrice price={product.price - product.discountedPrice} />
           </p>
         )}
+        
         <p
           className={`${priceClassName} ${cartMode && "!font-medium"} text-xl ${
             isSale && "text-red-500 "
@@ -58,7 +59,9 @@ export default function ProductPrice({
           <FormatPrice price={product.price} />
         </p>
         {isSale && cartMode && (
-          <p className={`${discountedPriceClassName} text-green-500 text-sm whitespace-nowrap`}>
+          <p
+            className={`${discountedPriceClassName} text-green-500 text-sm whitespace-nowrap`}
+          >
             - <FormatPrice price={product.price - product.discountedPrice} />
           </p>
         )}
@@ -71,27 +74,19 @@ export default function ProductPrice({
         )}{" "}
         {buyButton && (
           <div className="flex gap-3">
-            {addedToCart ? (
-              <Link to="/cart">
-                <DefaultButton text={"Go to cart"} secondary />
-              </Link>
-            ) : (
-              <>
-                <input
-                  value={amount}
-                  max={10}
-                  min={1}
-                  type="number"
-                  onChange={(e) => setAmount(Number(e.target.value))}
-                  className="border border-background focus:border-primary w-14 px-3 rounded"
-                />
-                <DefaultButton
-                  text={"+ Add to cart"}
-                  className="!bg-green-800 !border-green-800 hover:!text-green-800 hover:!bg-white"
-                  onClick={() => addToCartHandler()}
-                />
-              </>
-            )}
+            <input
+              value={amount}
+              max={10}
+              min={1}
+              type="number"
+              onChange={(e) => setAmount(Number(e.target.value))}
+              className="border border-background focus:border-primary w-14 px-3 rounded"
+            />
+            <DefaultButton
+              text={"+ Add to cart"}
+              className="!bg-green-800 !border-green-800 hover:!text-green-800 hover:!bg-white"
+              onClick={() => addToCartHandler()}
+            />
           </div>
         )}
       </div>

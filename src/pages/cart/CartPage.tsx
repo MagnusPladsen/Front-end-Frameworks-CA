@@ -26,13 +26,17 @@ export default function CartPage() {
           ))}
         </div>
       )}
-      <div className="mt-10 flex flex-col gap-10">
+      <div className="mt-10 flex flex-col gap-10 items-center">
+        <DefaultButton
+          text="Continue shopping"
+          onClick={() => goBack()}
+          secondary
+        />
         {cartItems.length > 0 && getCartTotal() > 0 && (
           <Link to="/cart/checkout">
             <DefaultButton text="Checkout" />
           </Link>
         )}
-        <DefaultButton text="Back" onClick={() => goBack()} secondary />
       </div>
 
       <h2 className="flex gap-3 text-xl pt-10">

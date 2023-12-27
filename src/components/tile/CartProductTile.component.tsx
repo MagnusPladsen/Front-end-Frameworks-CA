@@ -46,7 +46,7 @@ export default function CartProductTile({ product }: { product: CartItem }) {
           </div>
         </TileWrapper>
         <div
-          className="text-red-400 hover:bg-red-200 hover:text-white h-fit px-[10px] py-[2px] flex items-center justify-center hover:cursor-pointer text-lg bg-white rounded-full transition-all border border-red-200 "
+          className="text-red-400 hover:bg-red-200 hover:text-white h-fit px-2 py-1 flex items-center justify-center hover:cursor-pointer text-xs bg-white rounded-full transition-all border border-red-200 "
           onClick={() => {
             removeFromCart(product);
           }}
