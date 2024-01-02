@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import FormatPrice from "../formatters/FormatPrice.component";
 import CartIcon from "../iconComponents/CartIcon.component";
 import HamburgerIcon from "../iconComponents/HamburgerIcon.component";
+import { motion } from "framer-motion";
 
 export default function MobileNav({
   activeStyle,
@@ -17,6 +18,13 @@ export default function MobileNav({
   cartQuantity: number;
   pages: { name: string; path: string }[];
 }) {
+  const navigate = useNavigate();
+
+  const goToCartHandler = () => {
+    setIsDropdownOpen(false);
+    navigate("/cart");
+  };
+  
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -25,20 +33,26 @@ export default function MobileNav({
 
   return (
     <div className=" flex gap-5 relative">
-      <Link to="/cart">
-        <div className="flex gap-3 relative text-primary">
-          <FormatPrice price={cartTotal} />
-          <CartIcon height={20} width={20} />
-          {cartQuantity > 0 && (
-            <span className="absolute -top-1 -right-1 bg-red-500 text-white rounded-full w-5 h-5 flex justify-center items-center text-xs">
-              {cartQuantity}
-            </span>
-          )}
-        </div>
-      </Link>
-      <button onClick={toggleDropdown} className="text-primary">
+      <div
+        className="flex gap-3 relative text-primary"
+        onClick={() => goToCartHandler()}
+      >
+        <FormatPrice price={cartTotal} />
+        <CartIcon height={20} width={20} />
+        {cartQuantity > 0 && (
+          <span className="absolute -top-1 -right-1 bg-red-500 text-white rounded-full w-5 h-5 flex justify-center items-center text-xs">
+            {cartQuantity}
+          </span>
+        )}
+      </div>
+
+      <motion.div
+        animate={{ rotate: isDropdownOpen ? 90 : 0 }}
+        onClick={toggleDropdown}
+        className="text-primary"
+      >
         <HamburgerIcon height="h-7" width="w-7" />
-      </button>
+      </motion.div>
       {isDropdownOpen && (
         <ul className="absolute top-12 -right-3 bg-white border rounded shadow-md py-8 w-screen h-screen flex flex-col gap-8 items-center z-50">
           {pages.map((page) => (
