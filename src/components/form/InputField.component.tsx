@@ -29,7 +29,7 @@ export default function InputField({
           name={name}
           className={`${className} ${
             !!error && "border-red-500"
-          } rounded px-3 py-2 border border-primary shadow-inner w-full lg:w-96 `}
+          } rounded px-3 py-2 border border-gray-300 bg-gray-50 shadow-inner w-full lg:w-96 `}
         />
         <ErrorMessage name={name} component="div" className="text-red-500" />
       </div>
@@ -46,7 +46,7 @@ export default function InputField({
         name={name}
         className={`${className} ${
           !!error && "border-red-500"
-        } rounded px-3 py-2 border border-primary shadow-inner w-full lg:w-96 `}
+        } rounded px-3 py-2 border border-gray-300 bg-gray-50 shadow-inner w-full lg:w-96 `}
       />
       <ErrorMessage name={name} component="div" className="text-red-500" />
     </div>

@@ -33,7 +33,7 @@ export default function Input({
       )}
       <input
         type={type}
-        className={`${className} rounded px-3 py-2 border border-primary shadow-inner w-full lg:w-96 `}
+        className={`${className} rounded px-3 py-2 border border-gray-400 bg-gray-50 shadow-inner w-full lg:w-96 `}
         value={value}
         onChange={(e) => onChange(e)}
         placeholder={placeholder}
